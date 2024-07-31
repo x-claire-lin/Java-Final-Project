@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ear" name="Final_FWRP:ear exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Final_FWRP_ear_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Final_FWRP/javaeeApplication/javaEEApplication" />
+      <element id="directory" name="web.war">
+        <element id="artifact" artifact-name="Final_FWRP:war exploded" />
+      </element>
+    </root>
+  </artifact>
+</component>
