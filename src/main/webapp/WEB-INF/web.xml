@@ -1,0 +1,165 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+
+    <!-- Servlet 配置 -->
+    <servlet>
+        <servlet-name>AdminDeleteServlet</servlet-name>
+        <servlet-class>controller.AdminDeleteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+        <servlet-class>controller.AdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AuthorsServlet</servlet-name>
+        <servlet-class>controller.AuthorsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DiscountViewServlet</servlet-name>
+        <servlet-class>controller.DiscountViewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DiscountViewUpdate</servlet-name>
+        <servlet-class>controller.DiscountViewUpdate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DonationViewServlet</servlet-name>
+        <servlet-class>controller.DonationViewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DonationViewUpdate</servlet-name>
+        <servlet-class>controller.DonationViewUpdate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductManagementServlet</servlet-name>
+        <servlet-class>controller.ProductManagementServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PurchaseServlet</servlet-name>
+        <servlet-class>controller.PurchaseServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>controller.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RetailerViewServlet</servlet-name>
+        <servlet-class>controller.RetailerViewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SubscriptionAddServlet</servlet-name>
+        <servlet-class>controller.SubscriptionAddServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SubscriptionDeleteServlet</servlet-name>
+        <servlet-class>controller.SubscriptionDeleteServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SubscriptionMsgsDeleteServlet</servlet-name>
+        <servlet-class>controller.SubscriptionMsgsDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>SubscriptionMsgsServlet</servlet-name>
+        <servlet-class>controller.SubscriptionMsgsServlet</servlet-class>
+    </servlet>
+
+
+    <servlet>
+        <servlet-name>UserInfoServlet</servlet-name>
+        <servlet-class>controller.UserInfoServlet</servlet-class>
+    </servlet>
+
+    <!-- Servlet 映射 -->
+    <servlet-mapping>
+        <servlet-name>AdminDeleteServlet</servlet-name>
+        <url-pattern>/AdminDeleteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminServlet</servlet-name>
+        <url-pattern>/AdminServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AuthorsServlet</servlet-name>
+        <url-pattern>/AuthorsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DiscountViewServlet</servlet-name>
+        <url-pattern>/DiscountViewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DiscountViewUpdate</servlet-name>
+        <url-pattern>/DiscountViewUpdate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DonationViewServlet</servlet-name>
+        <url-pattern>/DonationViewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DonationViewUpdate</servlet-name>
+        <url-pattern>/DonationViewUpdate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductManagementServlet</servlet-name>
+        <url-pattern>/ProductManagementServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PurchaseServlet</servlet-name>
+        <url-pattern>/PurchaseServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RetailerViewServlet</servlet-name>
+        <url-pattern>/RetailerViewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SubscriptionAddServlet</servlet-name>
+        <url-pattern>/SubscriptionAddServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SubscriptionDeleteServlet</servlet-name>
+        <url-pattern>/SubscriptionDeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SubscriptionMsgsDeleteServlet</servlet-name>
+        <url-pattern>/SubscriptionMsgsDeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SubscriptionMsgsServlet</servlet-name>
+        <url-pattern>/SubscriptionMsgsServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserInfoServlet</servlet-name>
+        <url-pattern>/UserInfoServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 欢迎文件列表 -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
