@@ -14,7 +14,7 @@
 <body>
 <jsp:include page="topbar.jsp"/>
 <h3>Update Product</h3>
-<form name="productForm" action="${pageContext.request.contextPath}/UpdateProductSubmitServlet" onsubmit="return validateForm()" method="POST">
+<form name="productForm" action="../UpdateProductSubmitServlet" onsubmit="return validateForm()" method="POST">
     <!-- Assuming the userID is stored in the session -->
      <input type="hidden" name="productID" value="<%=product.getProductID() %>">
     Name: <input type="text" value="<%=product.getProductName() %>" name="productName" required><br>

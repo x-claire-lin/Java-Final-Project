@@ -1,8 +1,4 @@
-/* File: AuthorsBusinessLogic.java
- * AuthorDTO: Stanley Pieda
- * Date: 2015
- * Description: Demonstration of DAO Design Pattern with Servlet website
- */
+
 package businesslayer;
 
 import dataaccesslayer.AuthorsDaoImpl;

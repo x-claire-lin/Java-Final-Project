@@ -21,7 +21,7 @@
         }
     </script>
 
-     <link href="${pageContext.request.contextPath}/css/main.css" rel="stylesheet" type="text/css" />
+     <link href="../css/main.css" rel="stylesheet" type="text/css" />
     <style>
         .red-background {
             background-color: red;
@@ -69,7 +69,7 @@
         <td><%= product.getSurplusFlag() %></td>
         <td class="time-cell-2"><%= product.getExpiryDate() %></td>
         <td>
-            <a href="UpdateProductServlet?productID=<%= product.getProductID() %>">Update</a>
+            <a href="../UpdateProductServlet?productID=<%= product.getProductID() %>">Update</a>
         </td>
     </tr>
     <%

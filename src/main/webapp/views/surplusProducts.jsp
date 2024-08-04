@@ -1,7 +1,5 @@
 <%-- 
     Document   : SurplusProducts
-    Created on : Apr. 8, 2024, 6:24:11 p.m.
-    Author     : cuini
 --%>
 <%@page import="java.util.List"%>
 <%@page import="model.Products"%>

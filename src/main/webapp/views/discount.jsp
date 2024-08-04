@@ -1,8 +1,6 @@
 
 <%-- 
     Document   : discount
-    Created on : Apr 5, 2024
-    Author     : Chao Wu
 --%>
 <%@page import="java.util.ArrayList" %>
 <%@page import="model.DiscountView" %>
@@ -30,10 +28,10 @@ ArrayList<DiscountView> discounts = (ArrayList<DiscountView>) request.getAttribu
         
         <h2>Discount food List</h2>
         <p><%= username%></p>
-        <a href="LogoutServlet">Logout</a>
+        <a href="../LogoutServlet">Logout</a>
         
         
-        <div><a href="SubscriptionServlet">Subscription</a></div>
+        <div><a href="../SubscriptionServlet">Subscription</a></div>
     
        <div class="container clearfix">
     
@@ -72,7 +70,7 @@ ArrayList<DiscountView> discounts = (ArrayList<DiscountView>) request.getAttribu
         </table></div></div>
 
         <!-- Hidden form  for pass data to Servlet -->
-    <form id="redirectForm" action="<%= request.getContextPath() %>/DiscountViewUpdate" method="post">
+    <form id="redirectForm" action="../DiscountViewUpdate" method="post">
         <input type="hidden" name="id" id="idInput">
         <input type="hidden" name="amount" id="amountinput">
     </form>

@@ -71,9 +71,25 @@
         <servlet-class>controller.SubscriptionMsgsDeleteServlet</servlet-class>
     </servlet>
 
+
     <servlet>
         <servlet-name>SubscriptionMsgsServlet</servlet-name>
         <servlet-class>controller.SubscriptionMsgsServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>SurplusProductsServlet</servlet-name>
+        <servlet-class>controller.SurplusProductsServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>UpdateProductServlet</servlet-name>
+        <servlet-class>controller.UpdateProductServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>UpdateProductSubmitServlet</servlet-name>
+        <servlet-class>controller.UpdateProductSubmitServlet</servlet-class>
     </servlet>
 
 
@@ -153,10 +169,30 @@
         <servlet-name>SubscriptionMsgsServlet</servlet-name>
         <url-pattern>/SubscriptionMsgsServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SurplusProductsServlet</servlet-name>
+        <url-pattern>/SurplusProductsServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>UpdateProductServlet</servlet-name>
+        <url-pattern>/UpdateProductServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UpdateProductSubmitServlet</servlet-name>
+        <url-pattern>/UpdateProductSubmitServlet</url-pattern>
+    </servlet-mapping>
+
+
     <servlet-mapping>
         <servlet-name>UserInfoServlet</servlet-name>
         <url-pattern>/UserInfoServlet</url-pattern>
     </servlet-mapping>
+
+
 
     <!-- 欢迎文件列表 -->
     <welcome-file-list>

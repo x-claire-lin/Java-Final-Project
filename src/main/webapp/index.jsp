@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
+
 <html>
 <head>
     <title>OOP Final Group</title>
@@ -36,6 +33,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 
 </body>
 <footer>
-    <p>Made by : Chao Wu, Dunxing Yu, Qi Cheng, Yanan Wu    </p>
+    <p>Made by : Cheng Zhang, Qirong Chen, Yongxin Lian, Xihong Lin    </p>
 </footer>
 </html>

@@ -41,7 +41,7 @@
                 <a href="#"><i class="icon-font">&#xe018;</i>System</a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="${pageContext.request.contextPath}/AdminServlet"><i class="icon-font">&#xe017;</i>UserInfo</a>
+                        <a href="../AdminServlet"><i class="icon-font">&#xe017;</i>UserInfo</a>
                     </li>
                 </ul>
             </li>

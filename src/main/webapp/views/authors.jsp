@@ -1,4 +1,3 @@
-<%--https://stackoverflow.com/questions/4928271/how-to-install-jstl-it-fails-with-the-absolute-uri-cannot-be-resolved-or-una --%>
 
 <%@page import="model.User"%>
 <%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
@@ -37,7 +36,6 @@
                 <% }%>
             </tbody>
         </table>
-        
 
     </body>
 </html>

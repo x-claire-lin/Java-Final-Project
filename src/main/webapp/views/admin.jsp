@@ -1,9 +1,7 @@
 
 <%@page import="java.util.List"%>
 <%-- 
-    Document   : donations
-    Created on : Apr 5, 2024, 8:18:56 a.m.
-    Author     : Dunxing Yu
+    Document   : admin
 --%>
 <%@page import="java.util.ArrayList" %>
 <%@page import="model.User" %>
@@ -60,7 +58,7 @@ List<User> users = (List<User>) request.getAttribute("users");%>
             </div>
         </div>
 
-        <form id="redirectForm" action="<%= request.getContextPath() %>/AdminDeleteServlet" method="post">
+        <form id="redirectForm" action="../AdminDeleteServlet" method="post">
         <input type="hidden" name="id" id="idInput">
         </form>
 

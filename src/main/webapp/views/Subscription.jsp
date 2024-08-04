@@ -1,7 +1,5 @@
 <%-- 
     Document   : Subscriptionjsp
-    Created on : Apr 6, 2024, 9:53:05 a.m.
-    Author     : ydx22
 --%>
 
 <%@page import="model.ProductTypes"%>
@@ -23,7 +21,7 @@
     </head>
     <body>
     <jsp:include page="topbar.jsp"/>
-        <div><a href="SubscriptionMsgsServlet">View subscribed messages</a></div>
+        <div><a href="../SubscriptionMsgsServlet">View subscribed messages</a></div>
         <div>
             <a href="LogoutServlet">Logout</a>
             <h2>My Subscription</h2>
@@ -81,10 +79,10 @@
             </table>
         </div>    
         <!-- Hidden form  for pass data to Servlet -->
-    <form id="redirectForm" action="<%= request.getContextPath() %>/SubscriptionDeleteServlet" method="post">
+    <form id="redirectForm" action="../SubscriptionDeleteServlet" method="post">
         <input type="hidden" name="id" id="idInput">
     </form>
-    <form id="redirectForm1" action="<%= request.getContextPath() %>/SubscriptionAddServlet" method="post">
+    <form id="redirectForm1" action="../SubscriptionAddServlet" method="post">
         <input type="hidden" name="productType" id="productType">
         <input type="hidden" name="userID" id="idUser">
         <input type="hidden" name="subscription" id="sub">

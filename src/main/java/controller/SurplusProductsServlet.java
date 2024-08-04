@@ -4,11 +4,6 @@
  */
 package controller;
 
-/**
- *
- * @author Yanan
- */
-
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,6 +19,6 @@ public class SurplusProductsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // Forward the request to the JSP page
-        request.getRequestDispatcher("/surplusProducts.jsp").forward(request, response);
+        request.getRequestDispatcher("views/surplusProducts.jsp").forward(request, response);
     }
 }

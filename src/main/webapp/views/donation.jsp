@@ -1,8 +1,6 @@
 
 <%-- 
     Document   : donations
-    Created on : Apr 5, 2024, 8:18:56 a.m.
-    Author     : Dunxing Yu
 --%>
 <%@page import="java.util.ArrayList" %>
 <%@page import="model.DonationView" %>

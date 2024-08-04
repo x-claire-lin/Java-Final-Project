@@ -1,7 +1,5 @@
 <%-- 
     Document   : SubscriptionMsg
-    Created on : Apr 5, 2024, 8:44:12 p.m.
-    Author     : ydx22
 --%>
 
 <%@page import="model.SubscriptionMsg"%>
@@ -56,7 +54,7 @@
         </table>
 
         <!-- Hidden form  for pass data to Servlet -->
-    <form id="redirectForm" action="<%= request.getContextPath() %>/SubscriptionMsgsDeleteServlet" method="post">
+    <form id="redirectForm" action="../SubscriptionMsgsDeleteServlet" method="post">
         <input type="hidden" name="id" id="idInput">
     </form>
 

@@ -1,7 +1,5 @@
 <%-- 
     Document   : register
-    Created on : Apr 5, 2024, 4:48:53?p.m.
-    Author     : 46297
 --%>
 
 <%@page import="businesslayer.UserBusinessLogic"%>
