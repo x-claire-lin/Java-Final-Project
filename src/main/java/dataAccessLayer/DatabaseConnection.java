@@ -9,7 +9,7 @@ public class DatabaseConnection {
     private Connection connection = null;
     private String url = "jdbc:mysql://localhost:3306/fwrp?useSSL=false&allowPublicKeyRetrieval=true";
     private String username = "root";
-    private String password = "Algonquin";
+    private String password = "CST8288";
 
     public DatabaseConnection() {
         try {
