@@ -35,23 +35,28 @@ public class ProductsBusinessLogic {
     }
 
     public void updateProduct(Products product) {
+
         productsDao.updateProduct(product);
     }
 
     public void deleteProduct(Products product) {
+
         productsDao.deleteProduct(product);
     }
 
     public void updateDonation(int id, double amount) {
+
         productsDao.updateDonation(id, amount);
     }
 
     public void updateDiscount(int id, double amount) {
+
         productsDao.updateDiscount(id, amount);
     }
 
     // Method to trigger the update of surplus products
     public void updateSurplusProducts() {
+
         productsDao.updateSurplusProducts();
     }
 }

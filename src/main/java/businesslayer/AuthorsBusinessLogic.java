@@ -12,6 +12,7 @@ public class AuthorsBusinessLogic {
     private AuthorsDaoImpl authorsDao = null;
 
     public AuthorsBusinessLogic() {
+
         authorsDao = new AuthorsDaoImpl();
     }
 

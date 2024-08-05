@@ -1,4 +1,3 @@
-
 package businesslayer;
 
 import dataaccesslayer.UserSubscriptionDaoImpl;
@@ -52,6 +51,7 @@ public class UserSubscriptionBusinessLogic {
         userSubscriptionDao.deleteUserSubscription(userSubscription);
     }
     public void deleteUserSubscription(int sID){
+
         userSubscriptionDao.deleteUserSubscription(sID);
     }
 }

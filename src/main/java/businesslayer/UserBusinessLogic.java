@@ -38,17 +38,21 @@ public class UserBusinessLogic {
     }
 
     public void updateUser(User user){
+
         userDao.updateUser(user);
     }
 
     public void updateUserPass(User user) {
+
         userDao.updateUserPass(user);
     }
 
     public void deleteUser(String email){
+
         userDao.deleteUser(email);
     }
     public void deleteUserByID(int id){
+
         userDao.deleteUserByID(id);
     }
 
