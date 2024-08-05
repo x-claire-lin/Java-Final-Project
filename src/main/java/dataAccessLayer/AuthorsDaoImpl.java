@@ -1,4 +1,4 @@
-package dataaccesslayer;
+package dataAccessLayer;
 
 import model.Author;
 
