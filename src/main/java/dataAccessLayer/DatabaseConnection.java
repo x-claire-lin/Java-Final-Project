@@ -10,12 +10,13 @@ import java.sql.SQLException;
  */
 public class DatabaseConnection {
 
+    private static DatabaseConnection instance;
     private Connection connection = null;
     private String url = "jdbc:mysql://localhost:3306/fwrp?useSSL=false&allowPublicKeyRetrieval=true";
     private String username = "root";
     private String password = "CST8288";
 
-    public DatabaseConnection() {
+    private DatabaseConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -24,12 +25,16 @@ public class DatabaseConnection {
         }
     }
 
-    /*
-     * Only use one connection for this application, prevent memory leaks.
-     */
+    public static synchronized DatabaseConnection getInstance() {
+        if (instance == null) {
+            instance = new DatabaseConnection();
+        }
+        return instance;
+    }
+
     public Connection createConnection() throws SQLException {
         try {
-            if (connection != null) {
+            if (connection != null && !connection.isClosed()) {
                 System.out.println("Cannot create new connection, one exists already");
             } else {
                 connection = DriverManager.getConnection(url, username, password);
