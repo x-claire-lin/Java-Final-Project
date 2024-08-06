@@ -10,7 +10,7 @@ import java.sql.SQLException;
  */
 public class DatabaseConnection {
 
-    private static DatabaseConnection instance;
+    public static DatabaseConnection instance;
     private Connection connection = null;
     private String url = "jdbc:mysql://localhost:3306/fwrp?useSSL=false&allowPublicKeyRetrieval=true";
     private String username = "root";
