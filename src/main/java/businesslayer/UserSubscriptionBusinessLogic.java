@@ -39,6 +39,7 @@ public class UserSubscriptionBusinessLogic {
         return userSubscriptionDao.getUserSubscriptionList(userID, location);
     }
 
+
     public void addUserSubscription(UserSubscription userSubscription) {
         userSubscriptionDao.addUserSubscription(userSubscription);
     }
