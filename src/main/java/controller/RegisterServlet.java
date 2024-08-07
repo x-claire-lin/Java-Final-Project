@@ -64,7 +64,7 @@ public class RegisterServlet extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
     
     private void addUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {

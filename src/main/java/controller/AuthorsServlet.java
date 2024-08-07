@@ -4,7 +4,6 @@ import businesslayer.AuthorsBusinessLogic;
 import businesslayer.UserBusinessLogic;
 import model.Author;
 import model.User;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
