@@ -1,3 +1,6 @@
+<%-- 
+    Document   : SurplusProducts
+--%>
 <%@page import="java.util.List"%>
 <%@page import="model.Products"%>
 <%@page import="dataaccesslayer.SurplusProductIdentifier"%>
