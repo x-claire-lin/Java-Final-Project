@@ -62,7 +62,7 @@ String type = (String) session.getAttribute("userType");
     </div>
     <!--/main-->
     <script>
-        var msg = 'testmessage';
+        var msg = 'success';
         console.log(msg);
         if (msg !== '') {
             alert(msg);

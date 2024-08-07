@@ -16,20 +16,20 @@ public class UserBusinessLogic {
 
     //Get all users
     public List<User> getAllUsers() throws SQLException {
-        return userDao.getAllUesrs();
+        return userDao.getAllUsers();
     }
 
     //Get user by user type
     public List<User> getAllUsersByUT(String userType) throws SQLException {
-        return userDao.getAllUesrsByUT(userType);
+        return userDao.getAllUsersByUT(userType);
     }
     
     public int getUesrID(String userEmail) throws SQLException {
-        return userDao.getUesrID(userEmail);
+        return userDao.getUserID(userEmail);
     } 
      
     public User getUesrByEmail(String userEmail) throws SQLException {
-        return userDao.getUesrByEmail(userEmail);
+        return userDao.getUserByEmail(userEmail);
     } 
 
     //add user into database

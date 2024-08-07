@@ -14,7 +14,7 @@ public class UserDaoImpl {
     public UserDaoImpl() {
     }
     
-      public List<User> getAllUesrs() throws SQLException {
+      public List<User> getAllUsers() throws SQLException {
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -67,7 +67,7 @@ public class UserDaoImpl {
         return users;
     }
       
-    public List<User> getAllUesrsByUT(String userType) throws SQLException {
+    public List<User> getAllUsersByUT(String userType) throws SQLException {
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -121,7 +121,7 @@ public class UserDaoImpl {
         return users;
     }
 
-    public int getUesrID(String userEmail) throws SQLException {
+    public int getUserID(String userEmail) throws SQLException {
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -166,7 +166,7 @@ public class UserDaoImpl {
         return userIDGet;
     }
     
-   public User getUesrByEmail(String userEmail) throws SQLException {
+   public User getUserByEmail(String userEmail) throws SQLException {
         Connection con = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;

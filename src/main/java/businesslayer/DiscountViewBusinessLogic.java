@@ -16,6 +16,7 @@ public class DiscountViewBusinessLogic {
     private DiscountDaoImpl discountViewDao = null;
 
     public DiscountViewBusinessLogic() {
+
         discountViewDao = new DiscountDaoImpl();
     }
     public ArrayList<DiscountView> getAllDiscountProducts() throws SQLException {
