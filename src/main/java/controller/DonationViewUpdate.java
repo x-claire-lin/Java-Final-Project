@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package controller;
 
 import businesslayer.ProductsBusinessLogic;
@@ -16,7 +12,7 @@ import java.io.IOException;
 
 /**
  *
- * @author ydx22
+ * @author YongXin
  */
 @WebServlet(name = "DonationViewUpdate", urlPatterns = {"/DonationViewUpdate"})
 public class DonationViewUpdate extends HttpServlet {

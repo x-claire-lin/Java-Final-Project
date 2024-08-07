@@ -1,4 +1,3 @@
-<%--https://stackoverflow.com/questions/4928271/how-to-install-jstl-it-fails-with-the-absolute-uri-cannot-be-resolved-or-una --%>
 
 <%@page import="model.DiscountView"%>
 <%@page import="java.util.ArrayList"%>

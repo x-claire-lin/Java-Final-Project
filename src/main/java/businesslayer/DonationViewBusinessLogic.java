@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package businesslayer;
 
 import dataaccesslayer.DonationViewDaoImpl;
@@ -11,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- *
- * @author Dunxing Yu
+ * The class interacts with donationviewDao.
+ * @author Qirong Chen
  */
 public class DonationViewBusinessLogic {
     

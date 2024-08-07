@@ -1,4 +1,3 @@
-
 package controller;
 
 
@@ -19,7 +18,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author 46297
+ * @author YongXin
  */
 @WebServlet(name = "RegisterServlet", urlPatterns = {"/RegisterServlet"})
 public class RegisterServlet extends HttpServlet {

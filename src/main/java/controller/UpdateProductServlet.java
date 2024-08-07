@@ -46,5 +46,4 @@ public class UpdateProductServlet extends HttpServlet {
         response.getWriter().println("</script>");
     }
 
-
 }

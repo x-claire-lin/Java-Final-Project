@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 /**
 
@@ -11,7 +7,7 @@ This class provides methods to access and modify the ID and type attributes.
 
 It also overrides the toString() method to provide a string representation of the ProductTypes object.
 
-@author Dunxing Yu
+@author Xihong
 */
 public class ProductTypes {
     private String type;

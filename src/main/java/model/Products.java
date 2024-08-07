@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 import java.sql.Date;
 //import java.time.LocalDate;
@@ -10,7 +6,7 @@ import java.sql.Date;
 //import java.time.format.DateTimeFormatter;
 /**
  *
- * @author Dunxing Yu
+ * @author Xihong
  */
 public class Products {
    private Integer productID;
@@ -21,7 +17,7 @@ public class Products {
    private double discountAmount;
    private double donationAmount;
    private String productType;
-   private String surplusFlage;
+   private String surplusFlag;
    private String userCity;
    private int userID;
    private Date expiryDate;
@@ -36,9 +32,8 @@ public class Products {
         this.userCity = userCity;
     }
 
-    public Products(String productName, double salePrice, double discountPrice,
-                    double inventoryAmount, double discountAmount, double donationAmount,
-                    String productType, String surplusFlage, int userID, Date expiryDate, String userCity, Integer productId) {
+    public Products(String productName, double salePrice, double discountPrice, double inventoryAmount, double discountAmount, double donationAmount,
+                    String productType, String surplusFlag, int userID, Date expiryDate, String userCity, Integer productId) {
         this.productName = productName;
         this.salePrice = salePrice;
         this.discountPrice = discountPrice;
@@ -46,7 +41,7 @@ public class Products {
         this.discountAmount = discountAmount;
         this.donationAmount = donationAmount;
         this.productType = productType;
-        this.surplusFlage = surplusFlage;
+        this.surplusFlag = surplusFlag;
         this.userID = userID;
         this.expiryDate = expiryDate;
         this.userCity = userCity;
@@ -82,7 +77,7 @@ public class Products {
     }
 
     public String getSurplusFlag() {
-        return surplusFlage;
+        return surplusFlag;
     }
 
     public int getUserID() {
@@ -129,8 +124,8 @@ public class Products {
         this.productType = productType;
     }
 
-    public void setSurplusFlage(String surplusFlage) {
-        this.surplusFlage = surplusFlage;
+    public void setSurplusFlag(String surplusFlag) {
+        this.surplusFlag = surplusFlag;
     }
 
     public void setUserID(int userID) {
@@ -151,7 +146,7 @@ public class Products {
                 ", discountAmount='" + discountAmount + '\'' +
                 ", donationAmount='" + donationAmount + '\'' +  
                 ", productType='" + productType + '\'' +
-                ", surplusFlage='" + surplusFlage + '\'' +
+                ", surplusFlag='" + surplusFlag + '\'' +
                 ", userID='" + userID + '\'' +            
                 ", expiryDate=" + expiryDate +                
                 '}';

@@ -38,7 +38,7 @@ public class ProductsDaoImpl {
                 product.setDiscountAmount(rs.getDouble("discountAmount"));
                 product.setDonationAmount(rs.getDouble("donationAmount"));
                 product.setProductType(rs.getString("productType"));
-                product.setSurplusFlage(rs.getString("surplusFlage"));
+                product.setSurplusFlag(rs.getString("surplusFlag"));
                 product.setUserID(rs.getInt("userID"));
                 product.setExpiryDate(rs.getDate("expiryDate"));
                 products.add(product);
@@ -87,7 +87,7 @@ public class ProductsDaoImpl {
                 product.setDiscountAmount(rs.getDouble("discountAmount"));
                 product.setDonationAmount(rs.getDouble("donationAmount"));
                 product.setProductType(rs.getString("productType"));
-                product.setSurplusFlage(rs.getString("surplusFlage"));
+                product.setSurplusFlag(rs.getString("surplusFlag"));
                 product.setUserID(rs.getInt("userID"));
                 product.setExpiryDate(rs.getDate("expiryDate"));
                 products.add(product);
@@ -139,7 +139,7 @@ public class ProductsDaoImpl {
                 product.setDiscountAmount(rs.getDouble("discountAmount"));
                 product.setDonationAmount(rs.getDouble("donationAmount"));
                 product.setProductType(rs.getString("productType"));
-                product.setSurplusFlage(rs.getString("surplusFlage"));
+                product.setSurplusFlag(rs.getString("surplusFlag"));
                 product.setUserID(rs.getInt("userID"));
                 product.setExpiryDate(rs.getDate("expiryDate"));
                 product.setUserCity(rs.getString("userCity"));
@@ -172,23 +172,19 @@ public class ProductsDaoImpl {
         try {
             DataSource ds = new DataSource();
             con = ds.createConnection();
-            String query = "INSERT INTO products "
-                    + "(productName, salePrice, inventoryAmount, productType,"
-                    + " surplusFlage, userID, expiryDate,"
-                    + "discountAmount, discountPrice, donationAmount, userCity) "
-                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO products (productName, salePrice, discountPrice, inventoryAmount,discountAmount,donationAmount, productType,surplusFlag,userID,expiryDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             pstmt = con.prepareStatement(query);
             pstmt.setString(1, product.getProductName());
             pstmt.setDouble(2, product.getSalePrice());
-            pstmt.setDouble(3, product.getInventoryAmount());
-            pstmt.setString(4, product.getProductType());
-            pstmt.setString(5, product.getSurplusFlag());
-            pstmt.setInt(6, product.getUserID());
-            pstmt.setDate(7, product.getExpiryDate());
-            pstmt.setDouble(8, product.getDiscountAmount());
-            pstmt.setDouble(9, product.getDiscountPrice());
-            pstmt.setDouble(10, product.getDonationAmount());
-            pstmt.setString(11, product.getUserCity());
+            pstmt.setDouble(3, product.getDiscountPrice());
+            pstmt.setDouble(4, product.getInventoryAmount());
+            pstmt.setDouble(5, product.getDiscountAmount());
+            pstmt.setDouble(6, product.getDonationAmount());
+            pstmt.setString(7, product.getProductType());
+            pstmt.setString(8, product.getSurplusFlag());
+            pstmt.setInt(9, product.getUserID());
+            pstmt.setDate(10, product.getExpiryDate());
+            //pstmt.setString(11, product.getUserCity());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -210,31 +206,24 @@ public class ProductsDaoImpl {
         Connection con = null;
         PreparedStatement pstmt = null;
         try {
+
             DataSource ds = new DataSource();
             con = ds.createConnection();
-            String query = "UPDATE products SET "
-                    + "productName=?, "
-                    + "salePrice=?, "
-                    + "inventoryAmount=?, "
-                    + "productType=?, "
-                    + "surplusFlage=?, "
-                    + "expiryDate=?, "
-                    + "discountAmount=?, "
-                    + "discountPrice=?, "
-                    + "donationAmount=? "
-                    + "WHERE productID=?";
+            String query = "UPDATE products SET productName=?, salePrice=?, discountPrice=?,inventoryAmount=?,discountAmount=?,donationAmount=?,productType=?,surplusFlag=?,userID=?,expiryDate=? WHERE productID=? ";
             pstmt = con.prepareStatement(query);
             pstmt.setString(1, product.getProductName());
             pstmt.setDouble(2, product.getSalePrice());
-            pstmt.setDouble(3, product.getInventoryAmount());
-            pstmt.setString(4, product.getProductType());
-            pstmt.setString(5, product.getSurplusFlag());
-            pstmt.setDate(6, product.getExpiryDate());
-            pstmt.setDouble(7, product.getDiscountAmount());
-            pstmt.setDouble(8, product.getDiscountPrice());
-            pstmt.setDouble(9, product.getDonationAmount());
-            pstmt.setInt(10, product.getProductID());
+            pstmt.setDouble(3, product.getDiscountPrice());
+            pstmt.setDouble(4, product.getInventoryAmount());
+            pstmt.setDouble(5, product.getDiscountAmount());
+            pstmt.setDouble(6, product.getDonationAmount());
+            pstmt.setString(7, product.getProductType());
+            pstmt.setString(8, product.getSurplusFlag());
+            pstmt.setInt(9, product.getUserID());
+            pstmt.setDate(10, product.getExpiryDate());
+            pstmt.setInt(11, product.getProductID());
             pstmt.executeUpdate();
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

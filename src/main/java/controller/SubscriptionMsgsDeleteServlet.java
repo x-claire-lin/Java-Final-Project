@@ -16,7 +16,7 @@ import java.io.IOException;
 
 /**
  *
- * @author ydx22
+ * @author YongXin
  */
 @WebServlet(name = "SubscriptionMsgsDeleteServlet", urlPatterns = {"/SubscriptionMsgsDeleteServlet"})
 public class SubscriptionMsgsDeleteServlet extends HttpServlet {

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package businesslayer;
 
 import dataaccesslayer.ProductTypesDaoImpl;
@@ -16,7 +12,7 @@ The ProductTypesBusinessLogic class provides business logic operations for manag
 
 It interacts with the ProductTypesDaoImpl class to perform CRUD (Create, Read,Delete) operations on product types.
 
-@author Dunxing Yu
+@author Qirong Chen
 */
 public class ProductTypesBusinessLogic {
     private ProductTypesDaoImpl productTypesDao = null;

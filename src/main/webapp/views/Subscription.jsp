@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : Subscriptionjsp
 --%>
 
@@ -20,7 +20,7 @@
         <title>Donation food </title>
     </head>
     <body>
-    <jsp:include page="topbar.jsp"/>
+        <jsp:include page="topbar.jsp"/>
         <div><a href="../SubscriptionMsgsServlet">View subscribed messages</a></div>
         <div>
             <a href="LogoutServlet">Logout</a>
@@ -36,7 +36,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                   
+
                     <%for (UserSubscription s : subscription) {%>
                     <tr>
                         <td><%= s.getSubscriptionID() %></td>
@@ -45,22 +45,23 @@
                         <td><button onclick="submitForm('<%= s.getSubscriptionID() %>')">Delete</button></td>
 
                     </tr>
-                    <% }%> 
+                    <% }%>
                 </tbody>
             </table>
         </div>
-        <div> 
+        <div>
             <head>
-        <title>Donation food </title>
-    </head>
-    <body>
+            <title>Donation food </title>
+            </head>
+        </div>
+
         <div>
             <h2>Subscription</h2>
 
             <table border="1">
                 <thead>
                     <tr>
-                        
+
                         <th>Product Type</th>
                         <th>Action</th>
                     </tr>
@@ -69,7 +70,7 @@
 
                     <%for (ProductTypes t : productTypes) {%>
                     <tr>
-                        
+
                         <td><%= t.getType() %></td>
                         <td><button onclick="submitFormType('<%= t.getType() %>')">Add</button></td>
 
@@ -77,7 +78,7 @@
                     <% }%>
                 </tbody>
             </table>
-        </div>    
+        </div>
         <!-- Hidden form  for pass data to Servlet -->
     <form id="redirectForm" action="../SubscriptionDeleteServlet" method="post">
         <input type="hidden" name="id" id="idInput">
@@ -89,25 +90,25 @@
     </form>
     <script>
         function submitForm(id) {
-              
+
             alert("You delted Subscription ID is "+id+"!");
             //set form data
             document.getElementById("idInput").value = id;
             //submit form
             document.getElementById("redirectForm").submit();
-            
+
         }
         function submitFormType(type) {
-            
+
             alert("You Add Subscription Type is " + type + "!");
             // set form data
-            document.getElementById("productType").value = type; 
-           
+            document.getElementById("productType").value = type;
+
             // submit form
-            document.getElementById("redirectForm1").submit();  
-        }       
-        </script> 
-       
-     
+            document.getElementById("redirectForm1").submit();
+        }
+        </script>
+
+
     </body>
 </html>

@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author yehui
+ * @author Xihong
  */
 public class Retailer implements UserInterface{
     private String name;

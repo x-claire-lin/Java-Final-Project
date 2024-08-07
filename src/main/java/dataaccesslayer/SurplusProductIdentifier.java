@@ -18,14 +18,14 @@ public class SurplusProductIdentifier {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         List<Products> surplusProducts = new ArrayList<>();
-        
+
         try {
             DataSource ds = new DataSource();
             con = ds.createConnection();
             pstmt = con.prepareStatement(
                     "SELECT * FROM products WHERE expiryDate <= DATE_ADD(CURDATE(), INTERVAL 7 DAY) AND inventoryAmount > 200");
             rs = pstmt.executeQuery();
-            
+
             while (rs.next()) {
                 Products product = new Products();
                 product.setProductID(rs.getInt("productID"));
@@ -36,7 +36,7 @@ public class SurplusProductIdentifier {
                 product.setDiscountAmount(rs.getDouble("discountAmount"));
                 product.setDonationAmount(rs.getDouble("donationAmount"));
                 product.setProductType(rs.getString("productType"));
-                product.setSurplusFlage(rs.getString("surplusFlage"));
+                product.setSurplusFlag(rs.getString("surplusFlag"));
                 product.setUserID(rs.getInt("userID"));
                 product.setExpiryDate(rs.getDate("expiryDate"));
                 surplusProducts.add(product);
@@ -58,7 +58,7 @@ public class SurplusProductIdentifier {
                 ex.printStackTrace();
             }
         }
-        
+
         return surplusProducts;
     }
 
@@ -72,7 +72,7 @@ public class SurplusProductIdentifier {
             DataSource ds = new DataSource();
             con = ds.createConnection();
             pstmt = con.prepareStatement(
-                    "SELECT * FROM products WHERE expiryDate >= CURDATE() and ( discountAmount is not null or donationAmount is not null)");
+                    "SELECT * FROM products WHERE expiryDate >= CURDATE() and (discountAmount IS NOT NULL or donationAmount IS NOT NULL)");
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
@@ -85,7 +85,7 @@ public class SurplusProductIdentifier {
                 product.setDiscountAmount(rs.getDouble("discountAmount"));
                 product.setDonationAmount(rs.getDouble("donationAmount"));
                 product.setProductType(rs.getString("productType"));
-                product.setSurplusFlage(rs.getString("surplusFlage"));
+                product.setSurplusFlag(rs.getString("surplusFlag"));
                 product.setUserID(rs.getInt("userID"));
                 product.setExpiryDate(rs.getDate("expiryDate"));
                 surplusProducts.add(product);
@@ -134,7 +134,7 @@ public class SurplusProductIdentifier {
                 product.setDiscountAmount(rs.getDouble("discountAmount"));
                 product.setDonationAmount(rs.getDouble("donationAmount"));
                 product.setProductType(rs.getString("productType"));
-                product.setSurplusFlage(rs.getString("surplusFlage"));
+                product.setSurplusFlag(rs.getString("surplusFlag"));
                 product.setUserID(rs.getInt("userID"));
                 product.setExpiryDate(rs.getDate("expiryDate"));
                 surplusProducts.add(product);

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package controller;
 
 import dataaccesslayer.SurplusProductIdentifier;
@@ -19,7 +15,7 @@ import java.util.List;
 
 /**
  *
- * @author ydx22
+ * @author YongXin
  */
 @WebServlet(name = "RetailerViewServlet", urlPatterns = {"/RetailerViewServlet"})
 public class RetailerViewServlet extends HttpServlet {
@@ -85,6 +81,7 @@ public class RetailerViewServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
+
         return "Short description";
     }// </editor-fold>
 

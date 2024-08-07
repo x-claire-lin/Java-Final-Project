@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author ydx22
+ * @author Cheng
  */
 public class SubscriptionMsgDaoImpl {
 

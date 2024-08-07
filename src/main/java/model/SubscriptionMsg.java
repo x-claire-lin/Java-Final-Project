@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.sql.Date;
@@ -10,8 +6,7 @@ import java.sql.Date;
  * Represents a subscription message.
  * Contains information about the sender, recipient, content, and send date.
  * 
- * @author Dunxing Yu 
- * @version 1.0
+ * @author Xihong
  */
 public class SubscriptionMsg {
     
