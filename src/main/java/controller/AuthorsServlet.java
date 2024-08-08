@@ -33,19 +33,6 @@ public class AuthorsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        AuthorityService authorBusinessLogic = new AuthorityService();
-//        List<Author> authors = null;
-//
-//        try {
-//            authors = authorBusinessLogic.getAllAuthors();
-//        } catch (SQLException ex) {
-//            log(ex.getMessage());
-//        }
-//
-//        request.setAttribute("authors", authors);
-//
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("views/authors.jsp");
-//        dispatcher.forward(request, response);
         request.setAttribute("msg", "Password is incorrect");
         UserBusinessLogic UB=new UserBusinessLogic();
           List<User>  users= null;

@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Yongxin
+ * @author Yongxing Lian
  */
 @WebServlet(name = "SubscriptionServlet", urlPatterns = {"/SubscriptionServlet"})
 public class SubscriptionServlet extends HttpServlet {

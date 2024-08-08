@@ -34,8 +34,6 @@ public class DiscountViewServlet extends HttpServlet {
         
         DiscountService discountview = new DiscountService();
         ArrayList<DiscountView> discounts = null;
-        //int userID = (int) request.getAttribute("userID");
-        //String username = (String) request.getAttribute("username");
         
         
         try {
@@ -45,9 +43,6 @@ public class DiscountViewServlet extends HttpServlet {
         }
 
         request.setAttribute("discounts", discounts);
-        
-        //request.setAttribute("userID", userID);
-        //request.setAttribute("username", username);
 
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("views/discount.jsp");

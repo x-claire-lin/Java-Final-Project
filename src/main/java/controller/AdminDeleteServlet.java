@@ -12,7 +12,7 @@ import java.io.IOException;
 
 /**
  *
- * @author YongXin
+ * @author YongXing
  */
 @WebServlet(name = "AdminDeleteServlet", urlPatterns = {"/AdminDeleteServlet"})
 public class AdminDeleteServlet extends HttpServlet {

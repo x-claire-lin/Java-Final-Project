@@ -33,6 +33,6 @@
 
 </body>
 <footer>
-    <p>Made by : Cheng Zhang, Qirong Chen, Yongxin Lian, Xihong Lin    </p>
+    <p>Made by : Cheng Zhang, Qirong Chen, Yongxing Lian Lian, Xihong Lin    </p>
 </footer>
 </html>
