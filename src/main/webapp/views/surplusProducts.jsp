@@ -3,7 +3,7 @@
 --%>
 <%@page import="java.util.List"%>
 <%@page import="model.Products"%>
-<%@page import="dataAccessLayer.SurplusProductIdentifier"%>
+<%@page import="dataaccesslayer.SurplusProductIdentifier"%>
 <%@page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
