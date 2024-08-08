@@ -1,6 +1,6 @@
 package controller;
 
-import businesslayer.ProductsBusinessLogic;
+import businesslayer.ProductService;
 import dataaccesslayer.SurplusProductIdentifier;
 import model.Products;
 
@@ -49,7 +49,7 @@ public class UpdateProductSubmitServlet extends HttpServlet {
                 userID,
                 expiryDate, location, productID);
 
-            ProductsBusinessLogic productBL = new ProductsBusinessLogic();
+            ProductService productBL = new ProductService();
             productBL.updateProduct(product);
 
             SurplusProductIdentifier surplusProductIdentifier = new SurplusProductIdentifier();

@@ -2,7 +2,7 @@
     Document   : register
 --%>
 
-<%@page import="businesslayer.UserBusinessLogic"%>
+<%@page import="businesslayer.UserService"%>
 <%@page import="model.User"%>
 <!DOCTYPE html>
 <html>

@@ -1,7 +1,7 @@
 package controller;
 
 
-import businesslayer.UserBusinessLogic;
+import businesslayer.UserService;
 import model.User;
 
 import javax.servlet.ServletException;
@@ -69,7 +69,7 @@ public class RegisterServlet extends HttpServlet {
 
     
     private void addUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-        UserBusinessLogic UB=new UserBusinessLogic();
+        UserService UB=new UserService();
         String userName = request.getParameter("username");
         String userEmail = request.getParameter("email");
         String userPhoneNumber = request.getParameter("phonenumber");
@@ -78,7 +78,7 @@ public class RegisterServlet extends HttpServlet {
         String userCity = request.getParameter("usercity");
         if(userName.trim().length()!=0 && userEmail.trim().length()!=0 && userPhoneNumber.trim().length()!=0 && userPassword.trim().length()!=0 
                 && userType.trim().length()!=0 && userCity.trim().length()!=0){
-            User user=UB.getUesrByEmail(userEmail);
+            User user=UB.getUserByEmail(userEmail);
             if(user == null){
                 user=new User();
                 user.setUserName(userName);

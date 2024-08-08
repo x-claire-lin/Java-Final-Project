@@ -1,7 +1,7 @@
 package controller;
 
 import businesslayer.AuthorityService;
-import businesslayer.UserBusinessLogic;
+import businesslayer.UserService;
 import dataaccesslayer.DiscountDaoImpl;
 import model.Author;
 import model.DiscountView;
@@ -48,7 +48,7 @@ public class PurchaseServlet extends HttpServlet {
 //        RequestDispatcher dispatcher = request.getRequestDispatcher("views/authors.jsp");
 //        dispatcher.forward(request, response);
         //request.setAttribute("msg", "Password is incorrect");
-        UserBusinessLogic UB=new UserBusinessLogic();
+        UserService UB=new UserService();
         DiscountDaoImpl discount = new DiscountDaoImpl();
          List<User>  users= null;
          ArrayList<DiscountView> discountarray = null;
@@ -87,7 +87,7 @@ public class PurchaseServlet extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //UserBusinessLogic UB=new UserBusinessLogic();
+        //UserService UB=new UserService();
         DiscountDaoImpl discount = new DiscountDaoImpl();
           //List<User>  users= null;
           ArrayList<DiscountView> discountarray =null;
@@ -133,11 +133,11 @@ public class PurchaseServlet extends HttpServlet {
     }
     
     private Boolean checkUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-        UserBusinessLogic UB=new UserBusinessLogic();
+        UserService UB=new UserService();
         Boolean isExist=false;
         String email=request.getParameter("Email");
         String password=request.getParameter("password");
-        User user = UB.getUesrByEmail(email);
+        User user = UB.getUserByEmail(email);
         if( user!=null && user.getUserPassword().equals(password)){
                  isExist=true;            
         }

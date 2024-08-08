@@ -1,6 +1,6 @@
 package controller;
 
-import businesslayer.ProductsBusinessLogic;
+import businesslayer.ProductService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,8 +30,8 @@ public class DonationViewUpdate extends HttpServlet {
             // 获取请求参数中的ID，并将其转换为整数
             int id = Integer.parseInt(request.getParameter("id"));
             double amount = Double.parseDouble(request.getParameter("amount"));
-            // 创建ProductsBusinessLogic实例
-            ProductsBusinessLogic pbl = new ProductsBusinessLogic();
+            // 创建ProductService实例
+            ProductService pbl = new ProductService();
 
             // 使用获取的ID值来更新捐赠
             // 假设你还有一个从请求参数中获取金额的逻辑

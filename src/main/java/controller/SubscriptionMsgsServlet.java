@@ -1,7 +1,7 @@
 package controller;
 
-import businesslayer.ProductsBusinessLogic;
-import businesslayer.UserSubscriptionBusinessLogic;
+import businesslayer.ProductService;
+import businesslayer.UserSubscriptionService;
 import model.Products;
 import model.UserSubscription;
 
@@ -32,10 +32,10 @@ public class SubscriptionMsgsServlet extends HttpServlet {
         HttpSession session=request.getSession();
         int userID =(int)session.getAttribute("userID");
         String location =(String)session.getAttribute("location");
-        UserSubscriptionBusinessLogic businessLogic = new UserSubscriptionBusinessLogic();
+        UserSubscriptionService businessLogic = new UserSubscriptionService();
         List<UserSubscription> subscriptions = businessLogic.getUserSubscriptionList(userID, location);
         //查询出product所有订阅类型的，未过期的,打折的和user同一city的
-        ProductsBusinessLogic businessLogic1 = new ProductsBusinessLogic();
+        ProductService businessLogic1 = new ProductService();
         if (subscriptions != null && subscriptions.size() > 0) {
             List<String> collect = subscriptions.stream().map(UserSubscription::getProductType).collect(Collectors.toList());
             List<Products> productsList = businessLogic1.getAllProductsByCondition(collect, location);

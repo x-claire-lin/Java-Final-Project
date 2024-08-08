@@ -2,7 +2,7 @@ package controller;
 
 
 import businesslayer.AuthorityService;
-import businesslayer.UserBusinessLogic;
+import businesslayer.UserService;
 import model.Author;
 import model.User;
 
@@ -34,7 +34,7 @@ public class AuthorsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.setAttribute("msg", "Password is incorrect");
-        UserBusinessLogic UB=new UserBusinessLogic();
+        UserService UB=new UserService();
           List<User>  users= null;
           
            try {
@@ -99,11 +99,11 @@ public class AuthorsServlet extends HttpServlet {
     }
     
     private Boolean checkUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-        UserBusinessLogic UB=new UserBusinessLogic();
+        UserService UB=new UserService();
         Boolean isExist=false;
         String email=request.getParameter("Email");
         String password=request.getParameter("password");
-        User user = UB.getUesrByEmail(email);
+        User user = UB.getUserByEmail(email);
         if( user!=null && user.getUserPassword().equals(password)){
                  isExist=true;            
         }

@@ -4,7 +4,7 @@
  */
 package controller;
 
-import businesslayer.DonationViewBusinessLogic;
+import businesslayer.DonationViewService;
 import model.DonationView;
 
 import javax.servlet.RequestDispatcher;
@@ -36,7 +36,7 @@ public class DonationViewServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-         DonationViewBusinessLogic donationview = new DonationViewBusinessLogic();
+         DonationViewService donationview = new DonationViewService();
         ArrayList<DonationView> donations = null;
 
         try {

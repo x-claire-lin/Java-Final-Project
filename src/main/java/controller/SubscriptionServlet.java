@@ -1,7 +1,7 @@
 package controller;
 
-import businesslayer.ProductTypesBusinessLogic;
-import businesslayer.UserSubscriptionBusinessLogic;
+import businesslayer.ProductTypeService;
+import businesslayer.UserSubscriptionService;
 import model.ProductTypes;
 import model.UserSubscription;
 
@@ -26,7 +26,7 @@ public class SubscriptionServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int userID = 7;
-        UserSubscriptionBusinessLogic subscriptionLogic = new UserSubscriptionBusinessLogic();
+        UserSubscriptionService subscriptionLogic = new UserSubscriptionService();
         ArrayList<UserSubscription> subscription = null;
         HttpSession session = request.getSession(false);
         int id = (int) session.getAttribute("userID");
@@ -39,7 +39,7 @@ public class SubscriptionServlet extends HttpServlet {
         }
         request.setAttribute("userID", "testid");
         request.setAttribute("subscription", subscription);
-        ProductTypesBusinessLogic productTypeLogic = new ProductTypesBusinessLogic();
+        ProductTypeService productTypeLogic = new ProductTypeService();
         ArrayList<ProductTypes>  productTypes = null;
         try {
             // Assuming recipientID 6 is hardcoded, you may need to retrieve it from request parameters

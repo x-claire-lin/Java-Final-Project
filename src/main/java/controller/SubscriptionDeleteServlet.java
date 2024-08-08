@@ -1,6 +1,6 @@
 package controller;
 
-import businesslayer.UserSubscriptionBusinessLogic;
+import businesslayer.UserSubscriptionService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -46,7 +46,7 @@ public class SubscriptionDeleteServlet extends HttpServlet {
          try {
             
             int id = Integer.parseInt(request.getParameter("id"));
-            UserSubscriptionBusinessLogic usmbl = new UserSubscriptionBusinessLogic();
+            UserSubscriptionService usmbl = new UserSubscriptionService();
             usmbl.deleteUserSubscription(id);
             doGet(request, response);
         

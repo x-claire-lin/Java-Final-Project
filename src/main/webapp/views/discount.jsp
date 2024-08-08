@@ -4,8 +4,8 @@
 --%>
 <%@page import="java.util.ArrayList" %>
 <%@page import="model.DiscountView" %>
-<%@page import="businesslayer.ProductsBusinessLogic" %>
-<% ProductsBusinessLogic d = new ProductsBusinessLogic();
+<%@page import="businesslayer.ProductService" %>
+<% ProductService d = new ProductService();
 ArrayList<DiscountView> discounts = (ArrayList<DiscountView>) request.getAttribute("discounts");
 
 %>

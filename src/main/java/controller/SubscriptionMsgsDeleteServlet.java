@@ -4,7 +4,7 @@
  */
 package controller;
 
-import businesslayer.SubscriptionMsgBusinessLogic;
+import businesslayer.SubscriptionMsgService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -50,8 +50,8 @@ public class SubscriptionMsgsDeleteServlet extends HttpServlet {
             // 获取请求参数中的ID，并将其转换为整数
             int id = Integer.parseInt(request.getParameter("id"));
             
-            // 创建ProductsBusinessLogic实例
-            SubscriptionMsgBusinessLogic Smbl = new SubscriptionMsgBusinessLogic();
+            // 创建ProductService实例
+            SubscriptionMsgService Smbl = new SubscriptionMsgService();
 
             // 使用获取的ID值来更新捐赠
             // 假设你还有一个从请求参数中获取金额的逻辑

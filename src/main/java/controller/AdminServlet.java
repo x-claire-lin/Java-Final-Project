@@ -1,6 +1,6 @@
 package controller;
 
-import businesslayer.UserBusinessLogic;
+import businesslayer.UserService;
 import model.User;
 
 import javax.servlet.RequestDispatcher;
@@ -32,7 +32,7 @@ public class AdminServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        UserBusinessLogic userdao = new UserBusinessLogic();
+        UserService userdao = new UserService();
         List<User> users = null;
 
         try {

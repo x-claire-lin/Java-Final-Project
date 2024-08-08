@@ -1,6 +1,6 @@
 package controller;
 
-import businesslayer.UserBusinessLogic;
+import businesslayer.UserService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -45,7 +45,7 @@ public class AdminDeleteServlet extends HttpServlet {
             throws ServletException, IOException {
          try {
              int id = Integer.parseInt(request.getParameter("id"));
-            UserBusinessLogic admin = new UserBusinessLogic();
+            UserService admin = new UserService();
             
             admin.deleteUserByID(id);
             

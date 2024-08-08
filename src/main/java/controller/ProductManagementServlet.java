@@ -1,6 +1,6 @@
 package controller;
 
-import businesslayer.ProductsBusinessLogic;
+import businesslayer.ProductService;
 import model.Products;
 
 import javax.servlet.ServletException;
@@ -48,7 +48,7 @@ public class ProductManagementServlet extends HttpServlet {
                     null
             );
 
-            ProductsBusinessLogic productBL = new ProductsBusinessLogic();
+            ProductService productBL = new ProductService();
             productBL.addProduct(product);
 
             // Redirect to surplusProducts.jsp after successful addition

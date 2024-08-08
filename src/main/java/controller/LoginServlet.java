@@ -1,6 +1,6 @@
 package controller;
 
-import businesslayer.UserBusinessLogic;
+import businesslayer.UserService;
 import model.User;
 
 import javax.servlet.RequestDispatcher;
@@ -37,15 +37,15 @@ public class LoginServlet extends HttpServlet {
 
         // Get parameters
 
-        //String password = request.getParameter("password");BusinessLogic = new UserBusinessLogic();
+        //String password = request.getParameter("password");BusinessLogic = new UserService();
 
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        UserBusinessLogic userdao = new UserBusinessLogic();
+        UserService userdao = new UserService();
 
 
         try {
-            User user = userdao.getUesrByEmail(email);
+            User user = userdao.getUserByEmail(email);
             if(user!=null && user.getUserPassword().equals(password)){
                 //out.println(user.getUserEmail());
                 //response.sendRedirect("views/discount.jsp");

@@ -4,8 +4,8 @@
 --%>
 <%@page import="java.util.ArrayList" %>
 <%@page import="model.DonationView" %>
-<%@page import="businesslayer.ProductsBusinessLogic" %>
-<% ProductsBusinessLogic d = new ProductsBusinessLogic();
+<%@page import="businesslayer.ProductService" %>
+<% ProductService d = new ProductService();
 ArrayList<DonationView> donations = (ArrayList<DonationView>) request.getAttribute("donations");%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

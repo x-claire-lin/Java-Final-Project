@@ -5,7 +5,7 @@
 <%@page import="model.SubscriptionMsg"%>
 <%@page import="java.util.ArrayList" %>
 <%@page import="model.DonationView" %>
-<%@page import="businesslayer.ProductsBusinessLogic" %>
+<%@page import="businesslayer.ProductService" %>
 <%@ page import="java.util.List" %>
 <%@ page import="model.Products" %>
 <%List<Products> messages = (ArrayList<Products>) request.getAttribute("productsList");%>

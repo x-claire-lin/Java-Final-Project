@@ -1,7 +1,7 @@
 package controller;
 
-import businesslayer.UserBusinessLogic;
-import businesslayer.UserSubscriptionBusinessLogic;
+import businesslayer.UserService;
+import businesslayer.UserSubscriptionService;
 import model.User;
 import model.UserSubscription;
 
@@ -53,7 +53,7 @@ public class SubscriptionAddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-         UserSubscriptionBusinessLogic subscriptionLogic = new UserSubscriptionBusinessLogic();
+         UserSubscriptionService subscriptionLogic = new UserSubscriptionService();
          ArrayList<UserSubscription> subscription = null;
          try {
             //int userID = Integer.parseInt(request.getParameter("userID"));
@@ -78,11 +78,11 @@ public class SubscriptionAddServlet extends HttpServlet {
             
             if (!isExist){
                 String city = "*****";
-                UserSubscriptionBusinessLogic usmbl = new UserSubscriptionBusinessLogic();
+                UserSubscriptionService usmbl = new UserSubscriptionService();
                 UserSubscription subs = new UserSubscription();
                                                 
                 //get user city;
-                UserBusinessLogic userLogic = new UserBusinessLogic();
+                UserService userLogic = new UserService();
                 List<User> users = userLogic.getAllUsers();
                 for (User u : users) {
                     if (u.getUserID() == id) {

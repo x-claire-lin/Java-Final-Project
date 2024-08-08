@@ -1,6 +1,6 @@
 package controller;
 
-import businesslayer.ProductsBusinessLogic;
+import businesslayer.ProductService;
 import model.Products;
 
 import javax.servlet.RequestDispatcher;
@@ -19,7 +19,7 @@ public class UpdateProductServlet extends HttpServlet {
             throws ServletException, IOException {
         try {
             int productID = Integer.parseInt(request.getParameter("productID"));
-            ProductsBusinessLogic productBL = new ProductsBusinessLogic();
+            ProductService productBL = new ProductService();
             Products productsById = productBL.getProductsById(productID);
             request.setAttribute("productsById", productsById);
             RequestDispatcher dispatcher = request.getRequestDispatcher("views/UpdateProduct.jsp");

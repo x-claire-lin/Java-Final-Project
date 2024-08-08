@@ -5,8 +5,8 @@
 --%>
 <%@page import="java.util.ArrayList" %>
 <%@page import="model.User" %>
-<%@page import="businesslayer.ProductsBusinessLogic" %>
-<% ProductsBusinessLogic d = new ProductsBusinessLogic();
+<%@page import="businesslayer.ProductService" %>
+<% ProductService d = new ProductService();
 List<User> users = (List<User>) request.getAttribute("users");%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
