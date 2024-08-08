@@ -24,8 +24,8 @@ public class ProductTypesDaoImpl {
         ResultSet rs = null;
         ArrayList<ProductTypes> types = null;
         try {
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             pstmt = con.prepareStatement(
                     "SELECT * from ProductTypes");
   

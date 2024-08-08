@@ -23,8 +23,8 @@ public class DiscountDaoImpl {
         ResultSet rs = null;
         ArrayList<DiscountView> discounts = null;
         try {
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             pstmt = con.prepareStatement(
                     "SELECT * from DiscountView ORDER BY productID");
            

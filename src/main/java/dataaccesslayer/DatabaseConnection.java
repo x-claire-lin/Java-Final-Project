@@ -3,15 +3,18 @@ package dataaccesslayer;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
-public class DataSource {
+/**
+ *
+ * @author Cheng
+ */
+public class DatabaseConnection {
 
     private Connection connection = null;
     private String url = "jdbc:mysql://localhost:3306/fwrp?useSSL=false&allowPublicKeyRetrieval=true";
     private String username = "root";
     private String password = "57368782@Cqr";
 
-    public DataSource() {
+    public DatabaseConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {

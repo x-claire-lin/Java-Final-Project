@@ -19,8 +19,8 @@ public class DonationViewDaoImpl {
         ResultSet rs = null;
         ArrayList<DonationView> donations = null;
         try {
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             pstmt = con.prepareStatement(
                     "SELECT * from DonationView ORDER BY productID");
            

@@ -9,7 +9,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringJoiner;
-
+/**
+ *
+ * @author Cheng
+ */
 public class ProductsDaoImpl {
 
     public ProductsDaoImpl() {
@@ -21,8 +24,8 @@ public class ProductsDaoImpl {
         ResultSet rs = null;
         ArrayList<Products> products = null;
         try {
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             pstmt = con.prepareStatement(
                     "SELECT * from products where productId = ?");
             pstmt.setInt(1, productId);
@@ -70,8 +73,8 @@ public class ProductsDaoImpl {
         ResultSet rs = null;
         ArrayList<Products> products = null;
         try {
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             pstmt = con.prepareStatement(
                     "SELECT * from products where userID = ? ORDER BY productID");
             pstmt.setInt(1, userID);
@@ -123,8 +126,8 @@ public class ProductsDaoImpl {
             joiner.add(str);
         }
         try {
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             pstmt = con.prepareStatement("SELECT * from products p where p.discountAmount is not null and FIND_IN_SET(productType,?)  ORDER BY productID");
             pstmt.setString(1, joiner.toString());
             rs = pstmt.executeQuery();
@@ -170,8 +173,8 @@ public class ProductsDaoImpl {
         Connection con = null;
         PreparedStatement pstmt = null;
         try {
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             String query = "INSERT INTO products (productName, salePrice, discountPrice, inventoryAmount,discountAmount,donationAmount, productType,surplusFlag,userID,expiryDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             pstmt = con.prepareStatement(query);
             pstmt.setString(1, product.getProductName());
@@ -207,8 +210,8 @@ public class ProductsDaoImpl {
         PreparedStatement pstmt = null;
         try {
 
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             String query = "UPDATE products SET productName=?, salePrice=?, discountPrice=?,inventoryAmount=?,discountAmount=?,donationAmount=?,productType=?,surplusFlag=?,userID=?,expiryDate=? WHERE productID=? ";
             pstmt = con.prepareStatement(query);
             pstmt.setString(1, product.getProductName());
@@ -244,8 +247,8 @@ public class ProductsDaoImpl {
         Connection con = null;
         PreparedStatement pstmt = null;
         try {
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             String query = "DELETE FROM products WHERE productID=?";
             pstmt = con.prepareStatement(query);
             pstmt.setInt(1, product.getProductID());
@@ -270,8 +273,8 @@ public class ProductsDaoImpl {
         Connection con = null;
         PreparedStatement pstmt = null;
         try {
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             String query = "UPDATE products SET donationAmount=? WHERE productID=?";
             pstmt = con.prepareStatement(query);
             pstmt.setDouble(1, amount);
@@ -297,8 +300,8 @@ public class ProductsDaoImpl {
         Connection con = null;
         PreparedStatement pstmt = null;
         try {
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             String query = "UPDATE products SET discountAmount=? WHERE productID=?";
             pstmt = con.prepareStatement(query);
             pstmt.setDouble(1, amount);
@@ -324,8 +327,8 @@ public class ProductsDaoImpl {
         Connection con = null;
         PreparedStatement pstmt = null;
         try {
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             String selectSurplusQuery = "SELECT * FROM products WHERE expiryDate <= DATE_ADD(CURDATE(), INTERVAL 7 DAY) AND inventoryAmount > 200";
             pstmt = con.prepareStatement(selectSurplusQuery);
             ResultSet rs = pstmt.executeQuery();
@@ -354,8 +357,8 @@ public class ProductsDaoImpl {
         Connection con = null;
         PreparedStatement pstmt = null;
         try {
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             String updateSalePriceQuery = "UPDATE products SET salePrice = ? WHERE productID = ?";
             pstmt = con.prepareStatement(updateSalePriceQuery);
             pstmt.setDouble(1, newSalePrice);

@@ -10,7 +10,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ *
+ * @author Cheng
+ */
 public class SurplusProductIdentifier {
 
     public List<Products> identifySurplusProducts() {
@@ -20,8 +23,8 @@ public class SurplusProductIdentifier {
         List<Products> surplusProducts = new ArrayList<>();
 
         try {
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             pstmt = con.prepareStatement(
                     "SELECT * FROM products WHERE expiryDate <= DATE_ADD(CURDATE(), INTERVAL 7 DAY) AND inventoryAmount > 200");
             rs = pstmt.executeQuery();
@@ -69,8 +72,8 @@ public class SurplusProductIdentifier {
         List<Products> surplusProducts = new ArrayList<>();
 
         try {
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             pstmt = con.prepareStatement(
                     "SELECT * FROM products WHERE expiryDate >= CURDATE() and (discountAmount IS NOT NULL or donationAmount IS NOT NULL)");
             rs = pstmt.executeQuery();
@@ -118,8 +121,8 @@ public class SurplusProductIdentifier {
         List<Products> surplusProducts = new ArrayList<>();
 
         try {
-            DataSource ds = new DataSource();
-            con = ds.createConnection();
+            DatabaseConnection databaseConnection = new DatabaseConnection();
+            con = databaseConnection.createConnection();
             pstmt = con.prepareStatement("SELECT * FROM products WHERE userId = ?");
             pstmt.setInt(1, userId);
             rs = pstmt.executeQuery();
