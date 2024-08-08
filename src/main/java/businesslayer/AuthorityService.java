@@ -11,16 +11,16 @@ import java.util.List;
  * It interacts with the data access layer to perform operations
  * related to authors, such as retrieving all authors and adding a new author.
  */
-public class AuthorsBusinessLogic {
+public class AuthorityService {
 
     // Instance of AuthorsDaoImpl to interact with the database
-    private AuthorsDaoImpl authorsDao = null;
+    private AuthorsDaoImpl authorityDao = null;
 
     /**
      * Constructor that initializes the AuthorsDaoImpl instance.
      */
-    public AuthorsBusinessLogic() {
-        authorsDao = new AuthorsDaoImpl();
+    public AuthorityService() {
+        authorityDao = new AuthorsDaoImpl();
     }
 
     /**
@@ -30,7 +30,7 @@ public class AuthorsBusinessLogic {
      * @throws SQLException - If there is an error accessing the database.
      */
     public List<Author> getAllAuthors() throws SQLException {
-        return authorsDao.getAllAuthors();
+        return authorityDao.getAllAuthors();
     }
 
     /**
@@ -39,6 +39,6 @@ public class AuthorsBusinessLogic {
      * @param author - The Author object containing details of the author to be added.
      */
     public void addAuthor(Author author) {
-        authorsDao.addAuthor(author);
+        authorityDao.addAuthor(author);
     }
 }

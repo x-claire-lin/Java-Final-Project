@@ -1,7 +1,7 @@
 package controller;
 
 
-import businesslayer.AuthorsBusinessLogic;
+import businesslayer.AuthorityService;
 import businesslayer.UserBusinessLogic;
 import model.Author;
 import model.User;
@@ -33,7 +33,7 @@ public class AuthorsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        AuthorsBusinessLogic authorBusinessLogic = new AuthorsBusinessLogic();
+//        AuthorityService authorBusinessLogic = new AuthorityService();
 //        List<Author> authors = null;
 //
 //        try {
@@ -102,7 +102,7 @@ public class AuthorsServlet extends HttpServlet {
     }// </editor-fold>
 
     private void addAuthor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        AuthorsBusinessLogic authorBusinessLogic = new AuthorsBusinessLogic();
+        AuthorityService authorBusinessLogic = new AuthorityService();
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         Author author = new Author();

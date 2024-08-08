@@ -11,17 +11,16 @@ import java.util.ArrayList;
  * The class interacts with discountdao.
  * @author Qirong Chen
  */
-public class DiscountViewBusinessLogic {
-    
+public class DiscountService {
+
     private DiscountDaoImpl discountViewDao = null;
 
-    public DiscountViewBusinessLogic() {
-
+    public DiscountService() {
         discountViewDao = new DiscountDaoImpl();
     }
     public ArrayList<DiscountView> getAllDiscountProducts() throws SQLException {
         return discountViewDao.getAllDiscountProducts();
     }
-    
-    
+
+
 }

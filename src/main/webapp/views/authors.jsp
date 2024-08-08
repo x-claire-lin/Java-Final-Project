@@ -1,12 +1,12 @@
 
 <%@page import="model.User"%>
 <%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
-<%@page import="businesslayer.AuthorsBusinessLogic"%>
+<%@page import="businesslayer.AuthorityService"%>
 <%@page import="java.util.List" %>
 <%@page import="model.Author" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%--<% AuthorsBusinessLogic authorService = new AuthorsBusinessLogic();
+<%--<% AuthorityService authorService = new AuthorityService();
     List<Author> authors = authorService.getAllAuthors(); %>
 --%>
 

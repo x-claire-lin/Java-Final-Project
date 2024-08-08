@@ -1,6 +1,6 @@
 package controller;
 
-import businesslayer.AuthorsBusinessLogic;
+import businesslayer.AuthorityService;
 import businesslayer.UserBusinessLogic;
 import dataaccesslayer.DiscountDaoImpl;
 import model.Author;
@@ -34,7 +34,7 @@ public class PurchaseServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        AuthorsBusinessLogic authorBusinessLogic = new AuthorsBusinessLogic();
+//        AuthorityService authorBusinessLogic = new AuthorityService();
 //        List<Author> authors = null;
 //
 //        try {
@@ -123,7 +123,7 @@ public class PurchaseServlet extends HttpServlet {
     }// </editor-fold>
 
     private void addAuthor(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        AuthorsBusinessLogic authorBusinessLogic = new AuthorsBusinessLogic();
+        AuthorityService authorBusinessLogic = new AuthorityService();
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         Author author = new Author();

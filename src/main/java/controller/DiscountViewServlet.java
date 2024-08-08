@@ -1,6 +1,6 @@
 package controller;
 
-import businesslayer.DiscountViewBusinessLogic;
+import businesslayer.DiscountService;
 import model.DiscountView;
 
 import javax.servlet.RequestDispatcher;
@@ -32,7 +32,7 @@ public class DiscountViewServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        DiscountViewBusinessLogic discountview = new DiscountViewBusinessLogic();
+        DiscountService discountview = new DiscountService();
         ArrayList<DiscountView> discounts = null;
         //int userID = (int) request.getAttribute("userID");
         //String username = (String) request.getAttribute("username");
