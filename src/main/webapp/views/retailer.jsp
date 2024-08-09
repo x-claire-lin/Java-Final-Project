@@ -55,7 +55,7 @@
 <body>
 <jsp:include page="topbar.jsp"/>
 
-<h2>Inventory Management</h2>
+<h2>Inventory Management(refresh page to see products you added)</h2>
 
 <table border="1">
     <thead>

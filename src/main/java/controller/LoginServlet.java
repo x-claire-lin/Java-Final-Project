@@ -93,7 +93,7 @@ public class LoginServlet extends HttpServlet {
                     out.println("</head>");
                     out.println("<body>");
                     out.println("<h2>Username or password incorrect!</h2>");
-                    out.println("<a href='views/login.jsp'><button>Back, try again.</button></a>");
+                    out.println("<a href='views/login.jsp'><button>Go Back to Login.</button></a>");
                     out.println("</body>");
                     out.println("</html>");
                 }

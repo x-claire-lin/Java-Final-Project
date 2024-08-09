@@ -62,7 +62,7 @@
         window.location.href = "register.jsp";
     });
 
-    var msg = '${testmsg}';
+    var msg = '${testmessage}';
     console.log(msg);
     if (msg !== '') {
         alert(msg);
