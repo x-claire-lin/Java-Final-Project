@@ -17,88 +17,83 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * Servlet implementation class LoginServlet
  *
- * @author YongXin
+ * This servlet handles user authentication by processing login requests. It validates
+ * the user's credentials and, based on the user's type, redirects them to the appropriate
+ * page within the application.
+ *
+ * The servlet interacts with the UserService to retrieve user information from the
+ * database and manages user sessions by setting session attributes for authenticated
+ * users. If authentication fails, it displays an error message.
+ *
+ * @version 1.0
  */
 @WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
 public class LoginServlet extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+     * Validates the user's credentials and redirects them to their respective home page
+     * based on their user type. If the credentials are invalid, an error message is displayed.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        // Get parameters
-
-        //String password = request.getParameter("password");BusinessLogic = new UserService();
 
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         UserService userdao = new UserService();
 
-
         try {
             User user = userdao.getUserByEmail(email);
-            if(user!=null && user.getUserPassword().equals(password)){
-                //out.println(user.getUserEmail());
-                //response.sendRedirect("views/discount.jsp");
+            if(user != null && user.getUserPassword().equals(password)){
                 int userID = user.getUserID();
                 String username = user.getUserName();
                 String location = user.getUserCity();
                 String userEmail = user.getUserEmail();
                 String userType = user.getUserType();
 
-
                 HttpSession session = request.getSession();
                 session.setAttribute("username", username);
-                session.setAttribute("userID",userID);
-                session.setAttribute("userEmail",userEmail);
-                session.setAttribute("location",location);
-                session.setAttribute("userType",userType);
+                session.setAttribute("userID", userID);
+                session.setAttribute("userEmail", userEmail);
+                session.setAttribute("location", location);
+                session.setAttribute("userType", userType);
 
                 if(user.getUserType().equals("consumer")){
-                    session.setAttribute("home","DiscountViewServlet");
+                    session.setAttribute("home", "DiscountViewServlet");
                     RequestDispatcher dispatcher = request.getRequestDispatcher("/DiscountViewServlet");
                     dispatcher.forward(request, response);
-                }
-                if(user.getUserType().equals("retailer")){
-                    session.setAttribute("home","RetailerViewServlet");
+                } else if(user.getUserType().equals("retailer")){
+                    session.setAttribute("home", "RetailerViewServlet");
                     RequestDispatcher dispatcher = request.getRequestDispatcher("/RetailerViewServlet");
                     dispatcher.forward(request, response);
-                }
-                if(user.getUserType().equals("charitable organization")){
-                    session.setAttribute("home","DonationViewServlet");
+                } else if(user.getUserType().equals("charitable organization")){
+                    session.setAttribute("home", "DonationViewServlet");
                     RequestDispatcher dispatcher = request.getRequestDispatcher("/DonationViewServlet");
                     dispatcher.forward(request, response);
-                }
-                if(user.getUserType().equals("admin")){
-                    session.setAttribute("home","AdminServlet");
+                } else if(user.getUserType().equals("admin")){
+                    session.setAttribute("home", "AdminServlet");
                     RequestDispatcher dispatcher = request.getRequestDispatcher("/AdminServlet");
                     dispatcher.forward(request, response);
                 }
 
-
-
-            }
-
-            else{
+            } else {
                 response.setContentType("text/html;charset=UTF-8");
                 try ( PrintWriter out = response.getWriter()) {
                     out.println("<!DOCTYPE html>");
                     out.println("<html>");
                     out.println("<head>");
-                    out.println("<title>Username or password wrong!</title>");
+                    out.println("<title>Username or password incorrect!</title>");
                     out.println("</head>");
                     out.println("<body>");
-                    out.println("<h2>Username or password wrong!</h2>");
-                    out.println("<a href='views/login.jsp'><button>Back, enter again.</button></a>");
+                    out.println("<h2>Username or password incorrect!</h2>");
+                    out.println("<a href='views/login.jsp'><button>Back, try again.</button></a>");
                     out.println("</body>");
                     out.println("</html>");
                 }
@@ -107,18 +102,16 @@ public class LoginServlet extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
+     * Delegates to the <code>processRequest</code> method to handle the request.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -128,11 +121,12 @@ public class LoginServlet extends HttpServlet {
 
     /**
      * Handles the HTTP <code>POST</code> method.
+     * Delegates to the <code>processRequest</code> method to handle the request.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -143,11 +137,11 @@ public class LoginServlet extends HttpServlet {
     /**
      * Returns a short description of the servlet.
      *
-     * @return a String containing servlet description
+     * @return a String containing a short description of the servlet's functionality
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+        return "Servlet for handling user login and authentication";
+    }
 
 }

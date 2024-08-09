@@ -15,8 +15,8 @@
         <servlet-class>controller.AdminServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AuthorsServlet</servlet-name>
-        <servlet-class>controller.AuthorsServlet</servlet-class>
+        <servlet-name>AuthorityServlet</servlet-name>
+        <servlet-class>controller.AuthorityServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DiscountViewServlet</servlet-name>
@@ -108,8 +108,8 @@
         <url-pattern>/AdminServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AuthorsServlet</servlet-name>
-        <url-pattern>/AuthorsServlet</url-pattern>
+        <servlet-name>AuthorityServlet</servlet-name>
+        <url-pattern>/AuthorityServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DiscountViewServlet</servlet-name>

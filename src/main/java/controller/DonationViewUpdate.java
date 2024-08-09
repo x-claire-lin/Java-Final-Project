@@ -11,12 +11,30 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
+ * Servlet implementation class DonationViewUpdate
  *
- * @author YongXin
+ * This servlet handles the update of donation information for products. It processes
+ * both GET and POST requests, where the POST request updates the donation amount
+ * based on the provided product ID, and the GET request forwards the user to the
+ * DonationViewServlet for further processing.
+ *
+ * The servlet interacts with the ProductService to perform the donation update based
+ * on the provided product ID and donation amount.
+ *
+ * @author Yongxing Lian
  */
 @WebServlet(name = "DonationViewUpdate", urlPatterns = {"/DonationViewUpdate"})
 public class DonationViewUpdate extends HttpServlet {
 
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     * Forwards the request to the DonationViewServlet.
+     *
+     * @param request  servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException      if an I/O error occurs
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -24,31 +42,40 @@ public class DonationViewUpdate extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     * Updates the donation information for a product based on the provided ID and amount.
+     * If the ID or amount is invalid, a 400 Bad Request error is returned.
+     *
+     * @param request  servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException      if an I/O error occurs
+     */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         try {
-            // 获取请求参数中的ID，并将其转换为整数
             int id = Integer.parseInt(request.getParameter("id"));
             double amount = Double.parseDouble(request.getParameter("amount"));
-            // 创建ProductService实例
-            ProductService pbl = new ProductService();
 
-            // 使用获取的ID值来更新捐赠
-            // 假设你还有一个从请求参数中获取金额的逻辑
+            ProductService pbl = new ProductService();
             pbl.updateDonation(id, amount);
 
-            // 重定向到 doGet() 方法中去处理其他逻辑
             doGet(request, response);
         } catch (NumberFormatException e) {
-            // 如果参数无法解析为整数，捕获异常并进行适当的错误处理
-            // 例如，可以返回一个错误页面或者向客户端发送一个错误消息
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid ID format");
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid ID or amount format");
         }
     }
 
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing a short description of the servlet's functionality
+     */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Servlet for updating donation information for products";
     }
 
 }

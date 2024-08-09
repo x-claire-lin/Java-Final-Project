@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package controller;
 
 import businesslayer.DonationViewService;
@@ -18,25 +14,35 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
+ * Servlet implementation class DonationViewServlet
+ * <p>
+ * This servlet handles requests for viewing donation products. It processes both
+ * GET and POST requests to fetch donation information from the database and
+ * forwards the data to a JSP page for display.
+ * <p>
+ * The servlet interacts with the DonationViewService to retrieve a list of donated
+ * products and sets this list as a request attribute before forwarding the request to
+ * the appropriate JSP page for rendering.
  *
- * @author YongXins
+ * @author Yongxing Lian
  */
 @WebServlet(name = "DonationViewServlet", urlPatterns = {"/DonationViewServlet"})
 public class DonationViewServlet extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+     * Retrieves all donation products from the database and forwards the data to the
+     * donation JSP page.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-         DonationViewService donationview = new DonationViewService();
+
+        DonationViewService donationview = new DonationViewService();
         ArrayList<DonationView> donations = null;
 
         try {
@@ -49,19 +55,16 @@ public class DonationViewServlet extends HttpServlet {
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("views/donation.jsp");
         dispatcher.forward(request, response);
-        
-        
-
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
+     * Delegates to the <code>processRequest</code> method to handle the request.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -71,11 +74,12 @@ public class DonationViewServlet extends HttpServlet {
 
     /**
      * Handles the HTTP <code>POST</code> method.
+     * Delegates to the <code>processRequest</code> method to handle the request.
      *
-     * @param request servlet request
+     * @param request  servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
+     * @throws IOException      if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -86,11 +90,11 @@ public class DonationViewServlet extends HttpServlet {
     /**
      * Returns a short description of the servlet.
      *
-     * @return a String containing servlet description
+     * @return a String containing a short description of the servlet's functionality
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+        return "Servlet for managing and displaying donation products";
+    }
 
 }

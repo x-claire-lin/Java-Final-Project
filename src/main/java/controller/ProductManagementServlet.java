@@ -12,12 +12,39 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Date;
 
-
-//new version - repair add product problem.
+/**
+ * Servlet implementation class ProductManagementServlet
+ * <p>
+ * This servlet handles the addition of new products to the system. It processes
+ * POST requests to collect product information from the request, creates a new
+ * Products object, and delegates the addition of the product to the ProductService.
+ * <p>
+ * After successful product addition, the user is redirected to the surplusProducts.jsp
+ * page. If any errors occur during the process, appropriate feedback is provided to
+ * the user through an alert message.
+ * <p>
+ * This servlet expects various product details, including the product name, sale price,
+ * discount price, inventory amount, discount amount, donation amount, product type,
+ * surplus flag, expiry date, and the user's location, to be submitted via the request.
+ *
+ * @author Yongxing Lian
+ */
 @WebServlet(name = "ProductManagementServlet", urlPatterns = {"/ProductManagementServlet"})
 public class ProductManagementServlet extends HttpServlet {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     * Collects product details from the request, creates a Products object, and
+     * adds the product to the system using the ProductService.
+     *
+     * @param request  servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException      if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         try {
             HttpSession session = request.getSession();
             int userID = (int) session.getAttribute("userID");
@@ -48,11 +75,11 @@ public class ProductManagementServlet extends HttpServlet {
                     null
             );
 
-            ProductService productBL = new ProductService();
-            productBL.addProduct(product);
+            ProductService productService = new ProductService();
+            productService.addProduct(product);
 
-            // Redirect to surplusProducts.jsp after successful addition
             response.sendRedirect("views/surplusProducts.jsp");
+
         } catch (NumberFormatException e) {
             provideFeedback(response, "Invalid numeric input. Please ensure all numeric fields are correctly formatted.");
         } catch (Exception e) {
@@ -60,6 +87,14 @@ public class ProductManagementServlet extends HttpServlet {
         }
     }
 
+    /**
+     * Provides feedback to the user by displaying an alert with the provided message.
+     * This method is called when an error occurs during the product addition process.
+     *
+     * @param response servlet response
+     * @param message  the message to display in the alert
+     * @throws IOException if an I/O error occurs
+     */
     private void provideFeedback(HttpServletResponse response, String message) throws IOException {
         response.setContentType("text/html");
         response.getWriter().println("<script type=\"text/javascript\">");
