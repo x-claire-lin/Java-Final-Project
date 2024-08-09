@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * The UserService class provides business logic operations for managing users.
  * It interacts with the UserDaoImpl class to perform CRUD (Create, Read, Update, Delete) operations on users.
- * author Qirong Chen
+ * @author Qirong Chen
  */
 public class UserService {
 
