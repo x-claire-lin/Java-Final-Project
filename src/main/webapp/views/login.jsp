@@ -1,67 +1,68 @@
 <!doctype html>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title> Food waste Reduction Platform </title>
-    <link href="../css/platform_login.css" rel="stylesheet" type="text/css" />
+    <title>Food Waste Reduction Platform</title>
+    <link href="../css/login.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div class="platform_login_wrap">
-    
-    <h1>Food waste Reduction Platform</h1>
-   
-    <div class="platform_login_border">
-        <div class="platform_input">
+<div class="login-container">
+    <h1>Food Waste Reduction Platform</h1>
+
+    <div class="login-form-wrapper">
+        <div class="login-form">
             <form action="../LoginServlet" method="post">
-                 <div>
-                        <label for="email">Email</label>
-                        <input type="text" name="email" placeholder="Please enter email" id="email" size="40" class="platform_input_style" />
-                    </div>
-                  
-                    <div>
-                        <label for="password">Password</label>
-                        <input type="password" name="password" placeholder="Please enter password" id="password" size="40" class="platform_input_style" />
-                    </div>
-                
-                    <div>
-                        <input type="submit" style="margin-top: 15px"  value="Login" class="btn btn-primary" id="loginBtn"/>
-                    </div>
-                    <div>
-                        <input type="button" style="margin-top: 15px"  value="Sign up" class="btn btn-primary" id="registerBtn"/>
-                    </div>
-                     <div>
-                        <input type="reset" style="margin-top: 15px"  value="Clear" class="btn btn-primary" id="resetBtn"/>
-                    </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" placeholder="Please enter email" id="email" size="40"
+                           class="input-field"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" placeholder="Please enter password" id="password" size="40"
+                           class="input-field"/>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Login" class="btn btn-primary" id="loginBtn"/>
+                </div>
+                <div class="form-group">
+                    <input type="button" value="Sign up" class="btn btn-secondary" id="registerBtn"/>
+                </div>
+                <div class="form-group">
+                    <input type="reset" value="Reset" class="btn btn-tertiary" id="resetBtn"/>
+                </div>
             </form>
         </div>
     </div>
 </div>
 <script>
-    // get the form and input
+
     const form = document.querySelector('form');
     const email = document.querySelector('#email');
     const password = document.querySelector('#password');
 
-    // add event listener，check if the input is empty
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // prevent default behavior
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
 
         if (email.value === '') {
-            alert('Email cannot be empty！');
-        }else if(password.value === '') {
-            alert('Password cannot be empty！');
-        }else {
-            form.submit(); // submit
+            alert('Email cannot be empty!');
+        } else if (password.value === '') {
+            alert('Password cannot be empty!');
+        } else {
+            form.submit();
         }
     });
-    document.querySelector('#registerBtn').addEventListener('click', function() {
-    window.location.href="register.jsp";});
-    // add event listener，load register page
-    
 
-    var msg = 'testmessage';
+
+    document.querySelector('#registerBtn').addEventListener('click', function () {
+        window.location.href = "register.jsp";
+    });
+
+    var msg = '${msg}';
     console.log(msg);
     if (msg !== '') {
         alert(msg);

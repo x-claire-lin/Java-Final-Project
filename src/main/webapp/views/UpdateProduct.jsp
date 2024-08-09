@@ -1,11 +1,11 @@
-<%@page import="model.Products"%>
+<%@page import="model.Products" %>
 <%@page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     Products product = (Products) request.getAttribute("productsById");
 %>
 <html>
 <jsp:include page="header.jsp">
-    <jsp:param name="pageTitle" value="Retailer Inventory Management" />
+    <jsp:param name="pageTitle" value="Retailer Inventory Management"/>
 </jsp:include>
 <head>
     <title>Update Product</title>
@@ -18,7 +18,8 @@
     Name: <input type="text" value="<%=product.getProductName() %>" name="productName" required><br>
     Sale Price: <input type="number" step="0.01" value="<%=product.getSalePrice() %>" name="salePrice" required><br>
     Discount Price: <input type="number" step="0.01" value="<%=product.getDiscountPrice() %>" name="discountPrice"><br>
-    Inventory Amount: <input type="number" value="<%=product.getInventoryAmount() %>" name="inventoryAmount" required><br>
+    Inventory Amount: <input type="number" value="<%=product.getInventoryAmount() %>" name="inventoryAmount"
+                             required><br>
     Discount Amount: <input type="number" value="<%=product.getDiscountAmount() %>" name="discountAmount"><br>
     Donation Amount: <input type="number" value="<%=product.getDonationAmount() %>" name="donationAmount"><br>
     Product Type:

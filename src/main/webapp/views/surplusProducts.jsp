@@ -1,9 +1,9 @@
 <%-- 
     Document   : SurplusProducts
 --%>
-<%@page import="java.util.List"%>
-<%@page import="model.Products"%>
-<%@page import="dataaccesslayer.SurplusProductIdentifier"%>
+<%@page import="java.util.List" %>
+<%@page import="model.Products" %>
+<%@page import="dataaccesslayer.SurplusProductIdentifier" %>
 <%@page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -44,16 +44,26 @@
             for (Products product : surplusProducts) {
     %>
     <tr>
-        <td><%= product.getProductID() %></td>
-        <td><%= product.getProductName() %></td>
-        <td><%= product.getSalePrice() %></td>
-        <td><%= product.getDiscountPrice() %></td>
-        <td class="time-cell-3"><%= product.getInventoryAmount() %></td>
-        <td><%= product.getDiscountAmount() %></td>
-        <td><%= product.getDonationAmount() %></td>
-        <td><%= product.getProductType() %></td>
-        <td><%= product.getSurplusFlag() %></td>
-        <td class="time-cell"><%= product.getExpiryDate() %></td>
+        <td><%= product.getProductID() %>
+        </td>
+        <td><%= product.getProductName() %>
+        </td>
+        <td><%= product.getSalePrice() %>
+        </td>
+        <td><%= product.getDiscountPrice() %>
+        </td>
+        <td class="time-cell-3"><%= product.getInventoryAmount() %>
+        </td>
+        <td><%= product.getDiscountAmount() %>
+        </td>
+        <td><%= product.getDonationAmount() %>
+        </td>
+        <td><%= product.getProductType() %>
+        </td>
+        <td><%= product.getSurplusFlag() %>
+        </td>
+        <td class="time-cell"><%= product.getExpiryDate() %>
+        </td>
     </tr>
     <%
         }
@@ -74,11 +84,10 @@
         return copy;
     }
 
-    // 检查库存量
+
     document.querySelectorAll('.time-cell-3').forEach(cell => {
         const inventory = parseInt(cell.textContent);
 
-        // 当库存量大于200时添加红色背景
         if (inventory > 200) {
             cell.classList.add('red-background');
         }
@@ -87,19 +96,16 @@
     const today = new Date();
     const daysToAdd = 7;
 
-    // 检查过期日期
     document.querySelectorAll('.time-cell').forEach(cell => {
         const cellDate = new Date(cell.textContent);
         const futureDate = addDays(today, daysToAdd);
 
-        // 当过期日期在未来7天内时添加红色背景
         if (cellDate <= futureDate) {
             cell.classList.add('red-background');
         }
     });
 
     function sendNotification() {
-        // 发送通知的代码
         alert("Notification sent successfully!");
     }
 </script>

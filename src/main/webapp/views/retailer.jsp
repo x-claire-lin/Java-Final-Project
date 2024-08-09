@@ -1,9 +1,9 @@
-<%@page import="java.util.List"%>
-<%@page import="model.Products"%>
+<%@page import="java.util.List" %>
+<%@page import="model.Products" %>
 <%@page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <jsp:include page="header.jsp">
-    <jsp:param name="pageTitle" value="Retailer Inventory Management" />
+    <jsp:param name="pageTitle" value="Retailer Inventory Management"/>
 </jsp:include>
 <head>
     <title>Retailer Inventory Management</title>
@@ -16,14 +16,14 @@
             }
             return true;
         }
-// add days
+
         function addDays(date, days) {
             const copy = new Date(Number(date));
             copy.setDate(date.getDate() + days);
             return copy;
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll('.time-cell-3').forEach(cell => {
                 const inventory = parseInt(cell.textContent, 10);
                 if (inventory >= 200) {
@@ -32,7 +32,7 @@
             });
 
             const today = new Date();
-            const daysToAdd = 7; // Add days
+            const daysToAdd = 7;
 
             document.querySelectorAll('.time-cell-2').forEach(cell => {
                 const cellDate = new Date(cell.textContent);
@@ -45,7 +45,7 @@
         });
     </script>
 
-    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <link href="../css/main.css" rel="stylesheet" type="text/css"/>
     <style>
         .red-background {
             background-color: red;
@@ -80,16 +80,26 @@
             for (Products product : productList) {
     %>
     <tr>
-        <td><%= product.getProductID() %></td>
-        <td><%= product.getProductName() %></td>
-        <td><%= product.getSalePrice() %></td>
-        <td><%= product.getDiscountPrice() %></td>
-        <td class="time-cell-3"><%= product.getInventoryAmount() %></td>
-        <td><%= product.getDiscountAmount() %></td>
-        <td><%= product.getDonationAmount() %></td>
-        <td><%= product.getProductType() %></td>
-        <td><%= product.getSurplusFlag() %></td>
-        <td class="time-cell-2"><%= product.getExpiryDate() %></td>
+        <td><%= product.getProductID() %>
+        </td>
+        <td><%= product.getProductName() %>
+        </td>
+        <td><%= product.getSalePrice() %>
+        </td>
+        <td><%= product.getDiscountPrice() %>
+        </td>
+        <td class="time-cell-3"><%= product.getInventoryAmount() %>
+        </td>
+        <td><%= product.getDiscountAmount() %>
+        </td>
+        <td><%= product.getDonationAmount() %>
+        </td>
+        <td><%= product.getProductType() %>
+        </td>
+        <td><%= product.getSurplusFlag() %>
+        </td>
+        <td class="time-cell-2"><%= product.getExpiryDate() %>
+        </td>
         <td>
             <a href="../UpdateProductServlet?productID=<%= product.getProductID() %>">Update</a>
         </td>

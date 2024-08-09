@@ -19,7 +19,8 @@
             <ul class="top-info-list clearfix">
 
                 <li>
-                    <a href="../UserInfoServlet"><%= username %></a>
+                    <a href="../UserInfoServlet"><%= username %>
+                    </a>
                     <a href="../LogoutServlet">Exit</a>
                 </li>
             </ul>

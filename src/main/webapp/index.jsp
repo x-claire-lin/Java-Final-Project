@@ -14,23 +14,27 @@
             margin: 0;
             padding: 0;
         }
+
         h1 {
             color: #ffffff;
             font-size: 36px;
             margin-top: 50px;
         }
+
         p {
             font-size: 18px;
             line-height: 1.6;
         }
+
         .content {
-            background: rgba(51, 140, 51, 0.8); /* Green with some transparency */
+            background: rgba(51, 140, 51, 0.8);
             padding: 20px;
             border-radius: 10px;
             display: inline-block;
             margin: 20px auto;
-            max-width: 600px; /* Adjust the width */
+            max-width: 600px;
         }
+
         a {
             color: #000;
             font-size: 20px;
@@ -42,10 +46,12 @@
             margin-top: 20px;
             transition: background 0.3s, color 0.3s;
         }
+
         a:hover {
             background: #000;
             color: #32CD32;
         }
+
         footer {
             margin-top: 40px;
             color: #000000;
@@ -56,7 +62,8 @@
 <body>
 <h1>Welcome to Food Waste Reduction Platform!</h1>
 <div class="content">
-    <p>The Food Waste Reduction Platform aims to connect food retailers, consumers, and charitable organizations to reduce food waste and promote sustainability.</p>
+    <p>The Food Waste Reduction Platform aims to connect food retailers, consumers, and charitable organizations to
+        reduce food waste and promote sustainability.</p>
     <p></p>
     <p>Join us in making a positive impact on the environment and helping people.</p>
     <p></p>
