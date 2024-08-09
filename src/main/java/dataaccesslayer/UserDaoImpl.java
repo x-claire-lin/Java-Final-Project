@@ -328,7 +328,7 @@ public class UserDaoImpl {
         try {
             DatabaseConnection databaseConnection = new DatabaseConnection();
             con = databaseConnection.createConnection();
-            pstmt = con.prepareStatement("Delete form Users where userEmail = ?" );             
+            pstmt = con.prepareStatement("Delete from Users where userID = ?;" );
             pstmt.setString(1, email);
             pstmt.executeUpdate();
         } catch (SQLException e) {
