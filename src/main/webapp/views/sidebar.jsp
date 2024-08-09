@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -16,13 +15,15 @@
                             <a href="${pageContext.request.contextPath}/inventory"><i class="icon-font">&#xe005;</i>Inventory</a>
                         </li>
                         <li>
-                            <a href="${pageContext.request.contextPath}/surplus"><i class="icon-font">&#xe005;</i>Food Surplus</a>
+                            <a href="${pageContext.request.contextPath}/surplus"><i class="icon-font">&#xe005;</i>Food
+                                Surplus</a>
                         </li>
                     </c:if>
 
                     <c:if test="${sessionScope.role  == 'Charitable Organizations'}">
                         <li>
-                            <a href="${pageContext.request.contextPath}/receive"><i class="icon-font">&#xe005;</i>Receive Food</a>
+                            <a href="${pageContext.request.contextPath}/receive"><i class="icon-font">&#xe005;</i>Receive
+                                Food</a>
                         </li>
                     </c:if>
 
