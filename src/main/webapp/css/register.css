@@ -8,7 +8,7 @@ body {
     padding: 0;
 }
 
-.login-container {
+.platform_login_wrap {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +22,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-.login-form-wrapper {
+.platform_login_border {
     background: rgba(51, 140, 51, 0.8);
     padding: 20px;
     border-radius: 10px;
@@ -32,27 +32,30 @@ h1 {
     align-items: center;
 }
 
-.login-form {
+.platform_input {
     width: 300px;
 }
 
-.form-group {
+.textfield {
     margin-bottom: 15px;
     text-align: left;
 }
 
-.label {
+.textfield label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: #fff;
 }
 
-.input-field {
+.platform_input_style,
+.select-control {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    margin-bottom: 15px;
 }
 
 .btn {
@@ -62,16 +65,12 @@ h1 {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    margin-top: 15px;
 }
 
 .btn-primary {
     background: rgb(15, 87, 15);
     color: #fff;
-}
-
-.btn-secondary {
-    background: rgb(15, 87, 15);
-    color: #333;
 }
 
 .btn-tertiary {
@@ -82,5 +81,14 @@ h1 {
 .btn:hover {
     opacity: 0.9;
     background: rgba(255, 215, 0);
+}
 
+a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
 }
