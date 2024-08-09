@@ -2,9 +2,7 @@ package controller;
 
 import businesslayer.AuthorityService;
 import businesslayer.UserService;
-import dataaccesslayer.DiscountDaoImpl;
 import model.Author;
-import model.DiscountView;
 import model.User;
 
 import javax.servlet.RequestDispatcher;
@@ -15,31 +13,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Servlet implementation class PurchaseServlet
+ * This servlet manages user authentication and author management tasks. It handles
+ * both GET and POST requests to verify user credentials and manage author data.
  *
- * This servlet handles the retrieval and display of discounted products available for purchase.
- * It processes both GET and POST requests to fetch discount information from the database
- * and forwards the data to the purchase JSP page for display.
- *
- * The servlet interacts with DiscountDaoImpl to retrieve a list of discounted products
- * and sets this list as a request attribute before forwarding the request to the appropriate
- * JSP page for rendering. It also interacts with UserService to retrieve user information.
+ * The servlet interacts with the UserService and AuthorityService to retrieve user
+ * information and manage authors. If a user's credentials are verified successfully,
+ * they are granted access to author management functionalities.
  *
  * @author Yongxing Lian
  */
-@WebServlet(name = "PurchaseServlet", urlPatterns = {"/PurchaseServlet"})
-public class PurchaseServlet extends HttpServlet {
+@WebServlet(name = "AuthorityServlet", urlPatterns = {"/AuthorityServlet"})
+public class AuthorityServlet extends HttpServlet {
 
     /**
      * Handles the HTTP <code>GET</code> method.
-     * Retrieves discounted products and user information, then forwards the data to
-     * the purchase JSP page.
+     * Retrieves a list of users and forwards the request to the authors JSP page.
      *
      * @param request  servlet request
      * @param response servlet response
@@ -49,34 +42,24 @@ public class PurchaseServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        request.setAttribute("msg", "Password is incorrect");
         UserService US = new UserService();
-        DiscountDaoImpl discount = new DiscountDaoImpl();
         List<User> users = null;
-        ArrayList<DiscountView> discountarray = null;
-
-        try {
-            discountarray = discount.getAllDiscountProducts();
-        } catch (SQLException ex) {
-            Logger.getLogger(PurchaseServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
 
         try {
             users = US.getAllUsers();
         } catch (SQLException ex) {
             log(ex.getMessage());
         }
+        request.setAttribute("users", users);
 
-        request.setAttribute("dis", discountarray);
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("views/purchase.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("views/authors.jsp");
         dispatcher.forward(request, response);
     }
 
     /**
      * Handles the HTTP <code>POST</code> method.
-     * Retrieves discounted products from the database and forwards the data to
-     * the purchase JSP page.
+     * Verifies user credentials and, if valid, delegates to the <code>doGet</code> method.
      *
      * @param request  servlet request
      * @param response servlet response
@@ -86,19 +69,13 @@ public class PurchaseServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        DiscountDaoImpl discount = new DiscountDaoImpl();
-        ArrayList<DiscountView> discountarray = null;
-
         try {
-            discountarray = discount.getAllDiscountProducts();
+            if (checkUser(request, response)) {
+                doGet(request, response);
+            }
         } catch (SQLException ex) {
-            Logger.getLogger(PurchaseServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AuthorityServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        request.setAttribute("dis", discountarray);
-
-        RequestDispatcher dispatcher = request.getRequestDispatcher("views/purchase.jsp");
-        dispatcher.forward(request, response);
     }
 
     /**
@@ -108,7 +85,7 @@ public class PurchaseServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Servlet for managing the retrieval and display of discounted products for purchase";
+        return "Servlet for user authentication and author management";
     }
 
     /**
@@ -131,11 +108,11 @@ public class PurchaseServlet extends HttpServlet {
     }
 
     /**
-     * Checks if a user with the provided email and password exists in the system.
+     * Verifies user credentials.
      *
      * @param request  servlet request
      * @param response servlet response
-     * @return true if the user exists and the password matches, false otherwise
+     * @return true if the user's email and password are valid, false otherwise
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException      if an I/O error occurs
      * @throws SQLException     if a database access error occurs

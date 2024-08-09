@@ -1,7 +1,8 @@
 package controller;
 
-import businesslayer.UserBusinessLogic;
+import businesslayer.UserService;
 import model.User;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +14,15 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
+ * Servlet implementation class AdminServlet
+ *
+ * This servlet handles the retrieval and display of all users for administrative purposes.
+ * It processes both GET and POST requests to fetch user data and forward it to the
+ * admin view for display.
+ *
+ * The servlet interacts with the UserService to retrieve user data from the database and
+ * sets this data as a request attribute before forwarding the request to the appropriate
+ * JSP page for rendering.
  *
  * @author Yongxing Lian
  */
@@ -20,8 +30,8 @@ import java.util.List;
 public class AdminServlet extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+     * Retrieves all users from the database and forwards the data to the admin JSP page.
      *
      * @param request servlet request
      * @param response servlet response
@@ -30,8 +40,8 @@ public class AdminServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        UserBusinessLogic userdao = new UserBusinessLogic();
+
+        UserService userdao = new UserService();
         List<User> users = null;
 
         try {
@@ -41,16 +51,13 @@ public class AdminServlet extends HttpServlet {
         }
 
         request.setAttribute("users", users);
-
         RequestDispatcher dispatcher = request.getRequestDispatcher("views/admin.jsp");
         dispatcher.forward(request, response);
-        
-        
-
     }
 
     /**
      * Handles the HTTP <code>GET</code> method.
+     * Delegates to the <code>processRequest</code> method to handle the request.
      *
      * @param request servlet request
      * @param response servlet response
@@ -65,6 +72,7 @@ public class AdminServlet extends HttpServlet {
 
     /**
      * Handles the HTTP <code>POST</code> method.
+     * Delegates to the <code>processRequest</code> method to handle the request.
      *
      * @param request servlet request
      * @param response servlet response
@@ -80,11 +88,11 @@ public class AdminServlet extends HttpServlet {
     /**
      * Returns a short description of the servlet.
      *
-     * @return a String containing servlet description
+     * @return a String containing a short description of the servlet's functionality
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+        return "Servlet for managing and displaying all users for admin purposes";
+    }
 
 }
