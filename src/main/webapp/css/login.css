@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url("../images/index.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.login-form-wrapper {
+    background: rgba(51, 140, 51, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form {
+    width: 300px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: rgb(15, 87, 15);
+    color: #fff;
+}
+
+.btn-secondary {
+    background: rgb(15, 87, 15);
+    color: #333;
+}
+
+.btn-tertiary {
+    background: #ccc;
+    color: #333;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    background: rgba(255, 215, 0);
+
+}
